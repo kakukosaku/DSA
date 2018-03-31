@@ -1,8 +1,43 @@
-# Catalogue
-  
-## [algorithm](https://github.com/kakuchange/algorithmAndDataStructure/blob/master/algorithm.md)主要包括以下内容(不断更新中)  
+## algorithm
 
-### 1.时间复杂度计算
-### 2.排序算法总结
+- 主题
 
-### [data structure](https://github.com/kakuchange/algorithmAndDataStructure/blob/master/data%20structure.md)主要包括以下内容(不断更新中)
+ 1.时间复杂度计算
+
+ 2.排序算法总结
+
+- 解题
+
+    - [ ] leetcode
+
+## data structure
+
+- [  ] 线性表
+
+    - [  ] 栈
+
+    - [  ] 队列
+
+    - [  ] 堆
+
+    - [  ] 串
+
+- [  ] 树
+
+    - [  ] 二叉树
+        - [ ] 完全二叉树
+        - [ ] 线索二叉树
+        - [ ] 赫夫曼树
+        ~~- [ ] 最小生成树~~
+        - [ ] 二叉排序树/平衡二叉树(AVL)
+        - [ ] 多路查找树(B树)
+
+    - [  ] 森林
+        - [ ] 转化
+
+- [  ] 图
+    - [ ] 存储结构
+    - [ ] 遍历方式
+    - [ ] 最小生成树
+    - [ ] 最短路径
+    - [ ] 关键路径
