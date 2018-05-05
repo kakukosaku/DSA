@@ -1,4 +1,4 @@
-# [algorith](##algorith) and [data structure](##data structure)
+# [algorith](##algorith) and [data structure](##data-structure)
 
 ## algorithm
 
@@ -25,7 +25,7 @@
 - 解题
     - [ ] leetcode
 
-## data structure
+## data-structure
 
 - [ ] 线性表
 
