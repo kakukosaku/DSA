@@ -1,3 +1,5 @@
+# [algorith](##algorith) and [data structure](##data\ structure)
+
 ## algorithm
 
 - 主题
