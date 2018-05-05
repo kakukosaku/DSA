@@ -1,4 +1,4 @@
-# [algorith](##algorith) and [data structure](##data\ structure)
+# [algorith](##algorith) and [data structure](##data structure)
 
 ## algorithm
 
