@@ -16,7 +16,8 @@ from random import randint
 def bubble_sort(ls):
     """冒泡排序
 
-    pass
+    关键:
+        
 
     Args:
         ls: 待排列表
