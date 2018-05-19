@@ -16,8 +16,14 @@ from random import randint
 def bubble_sort(ls):
     """冒泡排序
 
-    关键:
-        
+    Notes:
+
+        1. 在python中, 对列表元素的遍历经常使用 for i in list_obj,
+        而非使用list[index], 但这在排序算法实现时, 反而会造成不便.
+        2. 下面的"冒泡", 自上向下.外循环 for i in range(len(ls))
+        进行len(ls)轮, 每一轮 for j in range(len(ls) - 1 - i)
+        对"剩下的"元素挨个对比, 小的挪到前面.
+        3. 优化措施如果某一轮没有一个元素挪动, 说明列表已有序, break!
 
     Args:
         ls: 待排列表
@@ -26,7 +32,6 @@ def bubble_sort(ls):
         sorted_ls
 
     """
-    ls = ls[:]
     total_compare = 0
     total_swap = 0
     need_sort = True
@@ -56,7 +61,7 @@ if __name__ == '__main__':
         ls.append(randint(0, 100))
     # 完全反序用以模拟最差情况
     # ls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-    print('old:')
+    print('original:')
     print(ls)
     sorted_ls = bubble_sort(ls)
     print('sorted:')

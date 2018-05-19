@@ -17,6 +17,11 @@ from random import randint
 def insert_sort(ls):
     """直接插入排序
 
+    Notes:
+        1. 类比抓扑克时的操作 => 向有序序列中插入新元素
+        2. 外层循环 for i in range(len(ls))
+
+
     Args:
         ls:
 
