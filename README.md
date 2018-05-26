@@ -25,7 +25,7 @@
 - 解题
     - [ ] leetcode
 
-## data-structure
+## data structure
 
 - [ ] 线性表
 
