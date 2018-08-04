@@ -27,9 +27,9 @@
 
 ## data structure
 
-- [ ] 线性表
+- [x] 线性表
 
-    - [ ] 栈
+    - [x] [栈](basic_concept.md#test)
 
     - [ ] 队列
 

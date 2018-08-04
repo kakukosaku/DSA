@@ -2,7 +2,7 @@
 # coding: utf-8
 #
 # author: kaku
-# data: 年/月/日
+# date: 年/月/日
 #
 # GitHub:
 #
