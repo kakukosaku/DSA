@@ -1,3 +1,11 @@
+/*
+auther: kaku
+date: 18/08/04 Sat
+github:	https://github.com/kakuchange
+description:
+	This module do what.
+*/
+
 package main
 
 import (
@@ -5,23 +13,19 @@ import (
 	"math/rand"
 )
 
-// function description you can write here.
-// func bubble(sp []int) ([]int, error) {
-func BubbleSort(s []int) []int {
-	for i := 0; i < len(s); i += 1 {
-		// 从 0 起, 从上往下冒泡...
-		// 排好序的置于最后
-		for j := 0; j < len(s)-1-i; j++ {
+func SelectSort(s []int) []int {
+	for i := 0; i < len(s); i++ {
+		smallIndex := i
+		for j := i; j < len(s)-1; j++ {
 			// 从小到大
-			if s[j] > s[j+1] {
-				s[j], s[j+1] = s[j+1], s[j]
+			if s[j+1] < s[j] {
+				smallIndex = j + 1
 			} else {
 				continue
 			}
 		}
+		s[i], s[smallIndex] = s[smallIndex], s[i]
 	}
-	// don't need return slice, in this porpose.
-	// we don't grow slice just change the corresponding array value.
 	return s
 }
 
@@ -38,6 +42,7 @@ func main() {
 		s[index] = rand.Intn(100)
 	}
 	fmt.Println("init slice:", s)
-	sortedSlice := BubbleSort(s)
+	sortedSlice := SelectSort(s)
 	fmt.Println("sort slice:", sortedSlice)
+
 }
