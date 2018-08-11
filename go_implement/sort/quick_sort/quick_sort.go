@@ -3,7 +3,7 @@ auther: kaku
 date: 18/08/05 Sun
 github:	https://github.com/kakuchange
 description:
-	Shell sort go implement.
+	This module do what.
 */
 
 package main
@@ -14,18 +14,25 @@ import (
 	"time"
 )
 
-func ShellSort(s []int) {
-	increment := len(s) / 2
-	for increment > 0 {
-		for i := increment; i < len(s); i++ {
-			j := i
-			for j >= increment && s[j] < s[j-increment] {
-				s[j], s[j-increment] = s[j-increment], s[j]
-				j = j - increment
-			}
-		}
-		increment = increment / 2
+func QuickSort(s []int) {
+	if len(s) <= 1 {
+		return
 	}
+	//每次选最左边为pivot.
+	mid := s[0]
+	head, tail := 0, len(s)-1
+	for i := 1; i <= tail; {
+		if s[i] > mid {
+			s[i], s[tail] = s[tail], s[i]
+			tail--
+		} else {
+			s[i], s[head] = s[head], s[i]
+			head++
+			i++
+		}
+	}
+	quickSort(s[:head])
+	quickSort(s[head+1:])
 }
 
 func main() {
@@ -44,8 +51,7 @@ func main() {
 		s[index] = rand.Intn(100)
 	}
 	fmt.Println("init slice:", s)
-	ShellSort(s)
+	QuickSort(s)
 	sortedSlice := s
 	fmt.Println("sort slice:", sortedSlice)
-
 }

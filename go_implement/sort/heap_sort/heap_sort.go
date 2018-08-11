@@ -28,7 +28,7 @@ func heapnify(s []int, start, end int) {
 	heapnify(s, smallerChild, end)
 }
 
-func heapSort(s []int) {
+func HeapSort(s []int) {
 	for start, end := len(s)/2, len(s)-1; start > 0; start-- {
 		heapnify(s, start, end)
 	}
@@ -52,7 +52,7 @@ func main() {
 		s[index] = rand.Intn(100)
 	}
 	fmt.Println("init slice:", s)
-	heapSort(s)
+	HeapSort(s)
 	sortedSlice := s
 	fmt.Println("sort slice:", sortedSlice)
 }

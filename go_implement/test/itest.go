@@ -80,8 +80,14 @@ func main() {
 	func() {
 		fmt.Println("I am anonyous funcion")
 	}()
-	fmt.Println(10.0 / 3)
+	fmt.Println((6 / 3) + 1)
 	if i, j := 0, 1; i < j {
 		fmt.Println("valid")
 	}
+	var p *int
+	var a = 1
+	p = &a
+	fmt.Println(a, p)
+	p = nil
+	fmt.Println(a, p)
 }

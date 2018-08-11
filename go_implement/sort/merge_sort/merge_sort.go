@@ -1,9 +1,9 @@
 /*
 auther: kaku
-date: 18/08/05 Sun
+date: 18/08/06 Mon
 github:	https://github.com/kakuchange
 description:
-	Shell sort go implement.
+	This module do what.
 */
 
 package main
@@ -14,20 +14,33 @@ import (
 	"time"
 )
 
-func ShellSort(s []int) {
-	increment := len(s) / 2
-	for increment > 0 {
-		for i := increment; i < len(s); i++ {
-			j := i
-			for j >= increment && s[j] < s[j-increment] {
-				s[j], s[j-increment] = s[j-increment], s[j]
-				j = j - increment
-			}
-		}
-		increment = increment / 2
+func MergeSort(s []int) []int {
+	n := len(s)
+	if n < 2 {
+		return s
 	}
+	key := n / 2
+	left := MergeSort(s[0:key])
+	right := MergeSort(s[key:])
+	return merge(left, right)
 }
 
+func merge(left []int, right []int) []int {
+	tmp := make([]int, 0)
+	i, j := 0, 0
+	for i < len(left) && j < len(right) {
+		if left[i] < right[j] {
+			tmp = append(tmp, left[i])
+			i++
+		} else {
+			tmp = append(tmp, right[j])
+			j++
+		}
+	}
+	tmp = append(tmp, left[i:]...)
+	tmp = append(tmp, right[j:]...)
+	return tmp
+}
 func main() {
 	fmt.Println("vim-go")
 	// init a slice
@@ -44,8 +57,7 @@ func main() {
 		s[index] = rand.Intn(100)
 	}
 	fmt.Println("init slice:", s)
-	ShellSort(s)
-	sortedSlice := s
+	sortedSlice := MergeSort(s)
 	fmt.Println("sort slice:", sortedSlice)
 
 }
