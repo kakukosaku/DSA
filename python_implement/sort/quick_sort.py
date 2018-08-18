@@ -75,5 +75,6 @@ if __name__ == '__main__':
     print('old:')
     print(ls)
     sorted_ls = quick_sort(0, len(ls) - 1, ls)
+    # sorted_ls = quick_sort(ls, 0, len(ls) - 1)
     print('sorted:')
     print(sorted_ls)

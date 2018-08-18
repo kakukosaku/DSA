@@ -28,6 +28,7 @@ class Tree:
         self.waiting_to_full_leave = list()
 
     def complete_tree_add(self, node):
+        """create a complete binary tree(完全二叉树)"""
         if not isinstance(node, Node):
             node = Node(node)
         if not self.root_node:
@@ -43,16 +44,16 @@ class Tree:
                 self.waiting_to_full_leave.append(node)
                 self.waiting_to_full_leave.pop(0)
 
-    def front_iteration_recursive(self, node):
+    def pre_order_iteration_recursive(self, node):
         if not node:
             print('\t Node arrive end!')
             return
         print('\t', node.data)
-        self.front_iteration_recursive(node.lchild)
-        self.front_iteration_recursive(node.rchild)
+        self.pre_order_iteration_recursive(node.lchild)
+        self.pre_order_iteration_recursive(node.rchild)
 
-    def front_iteration_stack(self):
-        if self.root_node == None:
+    def pre_order_iteration_stack(self):
+        if self.root_node is None:
             return
         stack = list()
         node = self.root_node
@@ -65,16 +66,53 @@ class Tree:
             node = stack.pop()  # while结束表示当前节点node为空，即前一个节点没有左子树了
             node = node.rchild
 
-    def middle_iteration_recursive(self, node):
+    def in_order_iteration_recursive(self, node):
         if not node:
             print('\t Node arrive end!')
             return
-        self.middle_iteration_recursive(node.lchild)
+        self.in_order_iteration_recursive(node.lchild)
         print('\t', node.data)
-        self.middle_iteration_recursive(node.rchild)
+        self.in_order_iteration_recursive(node.rchild)
 
-    def middle_iteration_stack(self):
-        pass
+    def in_order_iteration_stack(self):
+        if self.root_node is None:
+            return
+        stack = list()
+        node = self.root_node
+        while node or stack:
+            while node:  # 先将所有左子树压栈
+                stack.append(node)
+                node = node.lchild
+                print('\t Current Node arrive end!')
+            node = stack.pop()
+            print('\t', node.data)
+            node = node.rchild
+
+    def post_order_iteration_recursive(self, node):
+        if not node:
+            print('\t Node arrive end!')
+            return
+        self.post_order_iteration_recursive(node.lchild)
+        self.post_order_iteration_recursive(node.rchild)
+        print('\t', node.data)
+
+    def post_order_iteration_stack(self):
+        if self.root_node is None:
+            return
+        node = self.root_node
+        stack1 = list()
+        stack2 = list()
+        stack1.append(node)
+        while stack1:
+            node = stack1.pop()
+            if node.lchild:
+                stack1.append(node.lchild)
+            if node.rchild:
+                stack1.append(node.rchild)
+            stack2.append(node)
+        while stack2:
+            print(stack2.pop().data)
+
 
 if __name__ == "__main__":
     tree = Tree()
@@ -89,9 +127,18 @@ if __name__ == "__main__":
     print('前序遍历:')
     print('0 1 3 7 8 4 9 2 5 6')
     print('recursive solution:')
-    tree.front_iteration_recursive(tree.root_node)
+    tree.pre_order_iteration_recursive(tree.root_node)
     print('stack solution:')
-    tree.front_iteration_stack()
+    tree.pre_order_iteration_stack()
     print('中序遍历:')
-    tree.middle_iteration_recursive(tree.root_node)
+    print('7 3 8 1 9 4 0 5 2 6')
+    print('recursive solution:')
+    tree.in_order_iteration_recursive(tree.root_node)
+    print('stack solution:')
+    tree.in_order_iteration_stack()
     print('后序遍历:')
+    print('7 8 3 9 4 1 5 6 2 0')
+    print('recursive solution:')
+    tree.post_order_iteration_recursive(tree.root_node)
+    print('stack solution:')
+    tree.post_order_iteration_stack()
