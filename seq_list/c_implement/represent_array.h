@@ -11,7 +11,11 @@
 #define PRINT_INT(i) printf(#i ": %d\n", i)
 #define PRINT_CHR(c) printf(#c ": %c\n", c)
 #define PRINT_STR(s) printf(#s ": %s\n", s)
+#define True 1
+#define False 0
 
+// Bool Type Define
+typedef int Bool;
 
 // Sequence List Type Define
 typedef struct {
