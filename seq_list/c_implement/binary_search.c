@@ -14,7 +14,7 @@
  */
 
 #include <stdio.h>
-#include "represent_array.h"
+#include "represent.h"
 
 #define ArraySize 10
 
