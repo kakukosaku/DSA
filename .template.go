@@ -1,15 +1,10 @@
 /*
-auther: kaku
-date: 年/月/日 Sun
-github:	https://github.com/kakuchange
-description:
-	This module do what.
-*/
-
+ * author: kaku
+ * date: 2019/月/日
+ *
+ * GitHub:
+ *   https://github.com/kakuchange
+ *
+ * Description:
+ */
 package main
-
-import "fmt"
-
-func main() {
-	fmt.Println("vim-go")
-}

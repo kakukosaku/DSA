@@ -1,10 +1,12 @@
-//
-//  filename.c
-//  clangSkill
-//
-//  Created by kaku on 2019/xx/xx.
-//  Copyright © 2019 kaku. All rights reserved.
-//
+/*
+ * author: kaku
+ * date: 2019/月/日
+ * 
+ * GitHub:
+ *   https://github.com/kakuchange
+ * 
+ * Description:
+ */
 
 #include <stdio.h>
 
