@@ -8,3 +8,6 @@ __pycache__/
 
 tmp*
 .DS_Store
+
+# Clion tmp files
+cmake-build-debug/
