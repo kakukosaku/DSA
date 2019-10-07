@@ -13,7 +13,7 @@
 # Usage:
 #   python -m python_implement.bubble_sort
 
-from .array import random_array, show_array, swap
+from .array import random_array, show_array, swap, check_sorted
 
 ARRAY_SIZE = 10
 
@@ -22,10 +22,11 @@ def bubble_sort(arr, array_size):
     """Optimized Bubble Sort
 
     Notes:
-        1. If some circle not move elements position means array is sorted!
-        2. In Python arguments pass by reference to mutable variables, needn't return arr.
+        1. In Python arguments pass by reference to mutable variables, needn't return arr.
+        2. Pass array size to function `even in Python can get array(list) len on runtime`.
         3. Replace for loop with while since Python for loop is not friendly to use index.
-        4. Pass array size to function `even in Python can get array(list) len on runtime`.
+
+        4. If some circle not move elements position means array is sorted!
 
     """
     i = 0
@@ -35,7 +36,7 @@ def bubble_sort(arr, array_size):
             j = 0
             moved = False
             while j < array_size - i - 1:
-                # from small to large
+                # from small to big
                 if arr[j] > arr[j + 1]:
                     swap(arr, j, j + 1)
                     moved = True
@@ -49,3 +50,4 @@ if __name__ == '__main__':
     show_array(arr, "Original Array")
     bubble_sort(arr, len(arr))
     show_array(arr, "After Bubble Sort")
+    check_sorted(arr)

@@ -9,7 +9,7 @@ void adjust_down(int arr[], int idx, int array_size) {
     int temp = arr[idx];
 
     for (int i = 2 * idx + 1; i < array_size; i = (2 * i + 1)) {
-        if (i < array_size - 1 && arr[i] < arr[i + 1]) i++;  // find the larger one from two children.
+        if (i < array_size - 1 && arr[i] < arr[i + 1]) i++;  // find the bigger between two children.
         if (temp >= arr[i]) break;
         else {
             arr[idx] = arr[i];

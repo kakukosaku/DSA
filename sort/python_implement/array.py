@@ -44,3 +44,19 @@ def swap(array: list, i: int, j: int):
 def show_array(array, description):
     print("Description:", description, sep="\t")
     print("Show Array", array, sep="\t")
+
+
+def check_sorted(array, reverse=False):
+    """Default is from small to big"""
+    for i in range(len(array) - 1):
+        if reverse:
+            sort = array[i] >= array[i + 1]
+        else:
+            sort = array[i] <= array[i + 1]
+
+        if not sort:
+            print("Not Sorted Array!")
+            return False
+
+    print("Sorted Array!")
+    return True

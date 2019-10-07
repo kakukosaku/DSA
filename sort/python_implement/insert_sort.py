@@ -2,57 +2,51 @@
 # coding: utf-8
 #
 # author: kaku
-# date: 18/05/08
+# date: 19/10/07
 
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
-# 直接插入排序 Python 实现, 转载请附原链接
+# © 2019-2022 Kaku Kosaku All Rights Reserved
+#
+# Usage:
+#   python -m python_implement.insert_sort
+
+from .array import random_array, show_array, check_sorted
+
+ARRAY_SIZE = 10
 
 
-from random import randint
-
-
-def insert_sort(ls):
-    """直接插入排序
+def insert_sort(arr, array_size):
+    """Insert Sort
 
     Notes:
-        1. 类比抓扑克时的操作 => 向有序序列中插入新元素
-        2. 外层循环 for i in range(len(ls))
+        1. In Python arguments pass by reference to mutable variables, needn't return arr.
+        2. Pass array size to function `even in Python can get array(list) len on runtime`.
+        3. Replace for loop with while since Python for loop is not friendly to use index.
 
-
-    Args:
-        ls:
-
-    Returns:
+        4. Find the Right position; Move for space; Put it in.
 
     """
-    ls = ls[:]
-    total_compare = 0
-    total_swap = 0
-    for i in range(len(ls)):
-        for j in range(i, 0, -1):
-            total_compare += 1
-            if ls[j - 1] > ls[j]:  # 当前被比元素较小时才交换, 从小到大
-                total_swap += 1
-                ls[j - 1], ls[j] = ls[j], ls[j - 1]
-                continue  # 为了更清楚的表示, 向有序列表中插入的逻辑!
-            else:
-                break  # 向已有序列表中插入,
-    print('\ntotal compare:', total_compare, end='\n')
-    print('\ntotal swap:', total_swap, end='\n\n')
-    return ls
+    i = 1  # Not handle Exception case
+    while i < array_size:
+        # from small to big
+        if arr[i] < arr[i - 1]:
+            temp = arr[i]
+            j = i - 1
+            while j >= 0 and arr[j] > temp:
+                arr[j + 1] = arr[j]
+                j -= 1
+
+            arr[j + 1] = temp
+
+        i += 1
 
 
 if __name__ == '__main__':
-    ls = list()
-    for _ in range(10):
-        ls.append(randint(0, 100))
-    # 完全反序用以模拟最差情况
-    # ls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-    print('old:')
-    print(ls)
-    sorted_ls = insert_sort(ls)
-    print('sorted:')
-    print(sorted_ls)
+    arr = random_array(ARRAY_SIZE)
+    show_array(arr, "Original Array")
+    insert_sort(arr, len(arr))
+    show_array(arr, "After Insert Sort")
+    check_sorted(arr)
