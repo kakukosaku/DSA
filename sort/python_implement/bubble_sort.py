@@ -9,13 +9,8 @@
 #   https://github.com/kakukosaku
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
-#
-# Usage:
-#   python -m python_implement.bubble_sort
 
-from .array import random_array, show_array, swap, check_sorted
-
-ARRAY_SIZE = 10
+from .array import swap
 
 
 def bubble_sort(arr, array_size):
@@ -43,11 +38,3 @@ def bubble_sort(arr, array_size):
                 j += 1
         else:
             break
-
-
-if __name__ == '__main__':
-    arr = random_array(ARRAY_SIZE)
-    show_array(arr, "Original Array")
-    bubble_sort(arr, len(arr))
-    show_array(arr, "After Bubble Sort")
-    check_sorted(arr)

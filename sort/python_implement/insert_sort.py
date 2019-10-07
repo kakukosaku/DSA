@@ -9,13 +9,6 @@
 #   https://github.com/kakukosaku
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
-#
-# Usage:
-#   python -m python_implement.insert_sort
-
-from .array import random_array, show_array, check_sorted
-
-ARRAY_SIZE = 10
 
 
 def insert_sort(arr, array_size):
@@ -42,11 +35,3 @@ def insert_sort(arr, array_size):
             arr[j + 1] = temp
 
         i += 1
-
-
-if __name__ == '__main__':
-    arr = random_array(ARRAY_SIZE)
-    show_array(arr, "Original Array")
-    insert_sort(arr, len(arr))
-    show_array(arr, "After Insert Sort")
-    check_sorted(arr)

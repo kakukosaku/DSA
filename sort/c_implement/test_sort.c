@@ -18,12 +18,12 @@ void test_case(int * ptr, int array_size, char *description, void (*func)(int*, 
 int main() {
     int *ptr;
     ptr = random_array(ARRAY_SIZE);
-    show_array(ptr, ARRAY_SIZE, "Original Array.");
+    show_array(ptr, ARRAY_SIZE, "Original Array");
 
-    test_case(ptr, ARRAY_SIZE, "After Bubble sort.", bubble_sort);
-    test_case(ptr, ARRAY_SIZE, "After Select sort.", select_sort);
-    test_case(ptr, ARRAY_SIZE, "After Insert sort.", insert_sort);
-    test_case(ptr, ARRAY_SIZE, "After Quick sort.", quick_sort);
-    test_case(ptr, ARRAY_SIZE, "After Heap sort.", heap_sort);
+    test_case(ptr, ARRAY_SIZE, "After Bubble Sort", bubble_sort);
+    test_case(ptr, ARRAY_SIZE, "After Select Sort", select_sort);
+    test_case(ptr, ARRAY_SIZE, "After Insert Sort", insert_sort);
+    test_case(ptr, ARRAY_SIZE, "After Quick Sort", quick_sort);
+    test_case(ptr, ARRAY_SIZE, "After Heap Sort", heap_sort);
 }
 
