@@ -10,37 +10,37 @@
 
 int *init_array(int array_size) {
     int tmp;
-    int *ptr = malloc(array_size * sizeof(int));
+    int *arr = malloc(array_size * sizeof(int));
 
     // To generate random int each time call.
     srandom(time(NULL));
     for (int i = 0; i < array_size; i++) {
         tmp = (int)random() % 100;
-        *(ptr + i) = tmp;
+        *(arr + i) = tmp;
     }
 
-    return ptr;
+    return arr;
 }
 
 
-int *copy_array(int *ptr, int array_size) {
-    int *new_ptr = malloc(array_size * sizeof(int));
+int *copy_array(int *arr, int array_size) {
+    int *new_arr = malloc(array_size * sizeof(int));
     for (int i = 0; i < array_size; i++) {
-        new_ptr[i] = ptr[i];
+        new_arr[i] = arr[i];
     }
 
-    return new_ptr;
+    return new_arr;
 }
 
 
-void show_array(int *ptr, int array_size, char * description) {
+void show_array(int *arr, int array_size, char * description) {
     printf("Description:\t%s\nShow Array:\t", description);
     printf("[");
     for (int i = 0; i < array_size; i++) {
         if (i == (array_size - 1)) {
-            printf("%d]\n", ptr[i]);
+            printf("%d]\n", arr[i]);
         } else {
-            printf("%d, ", ptr[i]);
+            printf("%d, ", arr[i]);
         }
     }
 }
