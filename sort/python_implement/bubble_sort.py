@@ -2,67 +2,50 @@
 # coding: utf-8
 #
 # author: kaku
-# date: 18/05/08
+# date: 19/10/07
 
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
-# 冒泡排序 Python 实现, 转载请附原链接
+# © 2019-2022 Kaku Kosaku All Rights Reserved
+#
+# Usage:
+#   python -m python_implement.bubble_sort
 
-from random import randint
+from .array import random_array, show_array, swap
+
+ARRAY_SIZE = 10
 
 
-def bubble_sort(ls):
-    """冒泡排序
+def bubble_sort(arr, array_size):
+    """Optimized Bubble Sort
 
     Notes:
-
-        1. 在python中, 对列表元素的遍历经常使用 for i in list_obj,
-        而非使用list[index], 但这在排序算法实现时, 反而会造成不便.
-        2. 下面的"冒泡", 自上向下.外循环 for i in range(len(ls))
-        进行len(ls)轮, 每一轮 for j in range(len(ls) - 1 - i)
-        对"剩下的"元素挨个对比, 小的挪到前面.
-        3. 优化措施如果某一轮没有一个元素挪动, 说明列表已有序, break!
-
-    Args:
-        ls: 待排列表
-
-    Returns:
-        sorted_ls
+        1. If some circle not move elements position means array is sorted!
+        2. In Python arguments pass by reference to mutable variables, needn't return arr.
+        3. Replace for loop with while since Python for loop is not friendly to use index.
+        4. Pass array size to function `even in Python can get array(list) len on runtime`.
 
     """
-    total_compare = 0
-    total_swap = 0
-    need_sort = True
-    for i in range(len(ls)):
-        if need_sort:
-            for j in range(len(ls) - 1 - i):
-                total_compare += 1
-                if ls[j] > ls[j + 1]:  # 从小到大排
-                    total_swap += 1
-                    ls[j], ls[j + 1] = ls[j + 1], ls[j]
-                    need_sort = True
-                else:
-                    need_sort = False
+    i = 0
+    moved = True
+    while i < array_size:
+        if moved:
+            j = 0
+            moved = False
+            while j < array_size - i - 1:
+                # from small to large
+                if arr[j] > arr[j + 1]:
+                    swap(arr, j, j + 1)
+                    moved = True
+                j += 1
         else:
-            print('一般情况: 外层循环 *未全部* 走完即有序')
             break
-    else:
-        print('最坏情况: 外层循环 *全部* 走完')
-    print('\ntotal compare:', total_compare, end='\n')
-    print('\ntotal swap:', total_swap, end='\n\n')
-    return ls
 
 
 if __name__ == '__main__':
-    ls = list()
-    for _ in range(10):
-        ls.append(randint(0, 100))
-    # 完全反序用以模拟最差情况
-    # ls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-    print('original:')
-    print(ls)
-    sorted_ls = bubble_sort(ls)
-    print('sorted:')
-    print(sorted_ls)
+    arr = random_array(ARRAY_SIZE)
+    show_array(arr, "Original Array")
+    bubble_sort(arr, len(arr))
+    show_array(arr, "After Bubble Sort")

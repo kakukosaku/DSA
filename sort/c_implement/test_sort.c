@@ -18,7 +18,7 @@ void test_case(int * ptr, int array_size, char *description, void (*func)(int*, 
 int main() {
     int *ptr;
     ptr = random_array(ARRAY_SIZE);
-    show_array(ptr, ARRAY_SIZE, "Before sort.");
+    show_array(ptr, ARRAY_SIZE, "Original Array.");
 
     test_case(ptr, ARRAY_SIZE, "After Bubble sort.", bubble_sort);
     test_case(ptr, ARRAY_SIZE, "After Select sort.", select_sort);
