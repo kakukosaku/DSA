@@ -24,6 +24,7 @@ def random_array(array_size: int = 10, array_range: tuple = (0, 100)) -> List[in
 
 
 def reversed_array(array_size: int = 10):
+    """Get reversed array for test reason, like [5,4,3,2,1]"""
     array = list()
     for i in range(array_size):
         array.append(array_size - i)
@@ -42,13 +43,14 @@ def swap(array: List[int], i: int, j: int):
 
 
 def show_array(array: List[int], description: str) -> NoReturn:
+    """Display Function"""
     print()
     print("Description:", description, sep="\t")
     print("Show Array", array, sep="\t")
 
 
 def check_sorted(array: List[int], reverse=False) -> bool:
-    """Default is from small to big"""
+    """Check array is sorted or not, default is from small to big"""
     for i in range(len(array) - 1):
         if reverse:
             sort = array[i] >= array[i + 1]
