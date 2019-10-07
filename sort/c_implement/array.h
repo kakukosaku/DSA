@@ -21,6 +21,9 @@ void show_array(int *, int, char *);
 // Bubble Sort
 void bubble_sort(int *, int);
 
+// Quick Sort
+void quick_sort(int *, int);
+
 // Select Sort
 void select_sort(int *, int);
 
