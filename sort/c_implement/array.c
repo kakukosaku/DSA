@@ -8,7 +8,7 @@
 #include "array.h"
 
 
-int *init_array(int array_size) {
+int *random_array(int array_size) {
     int tmp;
     int *arr = malloc(array_size * sizeof(int));
 

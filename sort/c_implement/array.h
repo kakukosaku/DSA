@@ -10,7 +10,7 @@
 typedef int Bool;
 
 // Init a pointer to array
-int *init_array(int);
+int *random_array(int);
 
 // Copy a array, return a new pointer to a new array
 int *copy_array(int *, int);

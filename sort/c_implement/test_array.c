@@ -10,7 +10,7 @@
 int main() {
     int *ptr;
 
-    ptr = init_array(ARRAY_SIZE);
+    ptr = random_array(ARRAY_SIZE);
     show_array(ptr, ARRAY_SIZE, "Test Case.");
     free(ptr);
 
