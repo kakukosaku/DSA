@@ -24,5 +24,6 @@ int main() {
     test_case(ptr, ARRAY_SIZE, "After Select sort.", select_sort);
     test_case(ptr, ARRAY_SIZE, "After Insert sort.", insert_sort);
     test_case(ptr, ARRAY_SIZE, "After Quick sort.", quick_sort);
+    test_case(ptr, ARRAY_SIZE, "After Heap sort.", heap_sort);
 }
 

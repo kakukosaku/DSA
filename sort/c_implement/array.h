@@ -27,6 +27,9 @@ void quick_sort(int *, int);
 // Select Sort
 void select_sort(int *, int);
 
+// Heap Sort
+void heap_sort(int *, int);
+
 // Insert Sort
 void insert_sort(int *, int);
 
