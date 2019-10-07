@@ -10,7 +10,7 @@
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
 
-from typing import List
+from typing import List, NoReturn
 from random import randint
 
 
@@ -31,7 +31,7 @@ def reversed_array(array_size: int = 10):
     return array
 
 
-def swap(array: list, i: int, j: int):
+def swap(array: List[int], i: int, j: int):
     """Swap i and j corresponding value
 
     Notes:
@@ -41,12 +41,12 @@ def swap(array: list, i: int, j: int):
     array[i], array[j] = array[j], array[i]
 
 
-def show_array(array, description):
+def show_array(array: List[int], description: str) -> NoReturn:
     print("Description:", description, sep="\t")
     print("Show Array", array, sep="\t")
 
 
-def check_sorted(array, reverse=False):
+def check_sorted(array: List[int], reverse=False) -> bool:
     """Default is from small to big"""
     for i in range(len(array) - 1):
         if reverse:
