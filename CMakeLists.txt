@@ -13,4 +13,5 @@ add_executable(
         sort/c_implement/array.c
         sort/c_implement/bubbl_sort.c
         sort/c_implement/select_sort.c
+        sort/c_implement/insert_sort.c
 )

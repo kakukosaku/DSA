@@ -18,10 +18,13 @@ int *copy_array(int *, int);
 // Show array by pointer pointed to array
 void show_array(int *, int, char *);
 
-// Bubble sort
+// Bubble Sort
 void bubble_sort(int *, int);
 
-// Select sort
+// Select Sort
 void select_sort(int *, int);
+
+// Insert Sort
+void insert_sort(int *, int);
 
 #endif //DSA_ARRAY_H
