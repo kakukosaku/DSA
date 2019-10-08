@@ -23,7 +23,7 @@ int *random_array(int array_size) {
 }
 
 
-int *copy_array(int *arr, int array_size) {
+int *copy_array(const int *arr, int array_size) {
     int *new_arr = malloc(array_size * sizeof(int));
     for (int i = 0; i < array_size; i++) {
         new_arr[i] = arr[i];
@@ -45,7 +45,7 @@ void show_array(int *arr, int array_size, char *description) {
     }
 }
 
-Bool check_sorted(int arr[], int array_size, Bool reverse) {
+Bool check_sorted(const int arr[], int array_size, Bool reverse) {
     Bool sort;
     for (int i = 0; i < array_size - 1; i++) {
         if (reverse) {

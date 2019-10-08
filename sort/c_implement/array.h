@@ -13,13 +13,13 @@ typedef int Bool;
 int *random_array(int);
 
 // Copy a array, return a new pointer to a new array
-int *copy_array(int *, int);
+int *copy_array(const int *, int);
 
 // Show array by pointer pointed to array
 void show_array(int *, int, char *);
 
 // Check array is sorted or not
-Bool check_sorted(int *, int, Bool);
+Bool check_sorted(const int *, int, Bool);
 
 // Bubble Sort
 void bubble_sort(int *, int);
