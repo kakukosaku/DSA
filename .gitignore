@@ -11,3 +11,6 @@ tmp*
 
 # Clion tmp files
 cmake-build-debug/
+
+# vs code tmp files
+.vscode/
