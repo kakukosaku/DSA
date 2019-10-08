@@ -22,8 +22,6 @@ def select_sort(arr: List[int], array_size: int) -> NoReturn:
         2. Pass array size to function `even in Python can get array(list) len on runtime`.
         3. Replace for loop with while since Python for loop is not friendly to use index.
 
-        4. Find the Right position; Move for space; Put it in.
-
     """
     i = 0
     while i < array_size:
