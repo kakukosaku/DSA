@@ -15,7 +15,7 @@ int *random_array(int array_size) {
     // To generate random int each time call.
     srandom(time(NULL));
     for (int i = 0; i < array_size; i++) {
-        tmp = (int)random() % 100;
+        tmp = (int) random() % 100;
         *(arr + i) = tmp;
     }
 
@@ -33,8 +33,8 @@ int *copy_array(int *arr, int array_size) {
 }
 
 
-void show_array(int *arr, int array_size, char * description) {
-    printf("Description:\t%s\nShow Array:\t", description);
+void show_array(int *arr, int array_size, char *description) {
+    printf("\nDescription:\t%s\nShow Array:\t", description);
     printf("[");
     for (int i = 0; i < array_size; i++) {
         if (i == (array_size - 1)) {
@@ -43,4 +43,23 @@ void show_array(int *arr, int array_size, char * description) {
             printf("%d, ", arr[i]);
         }
     }
+}
+
+Bool check_sorted(int arr[], int array_size, Bool reverse) {
+    Bool sort;
+    for (int i = 0; i < array_size - 1; i++) {
+        if (reverse) {
+            sort = (arr[i] >= arr[i + 1]);
+        } else {
+            sort = (arr[i] <= arr[i + 1]);
+        }
+
+        if (sort != True) {
+            printf("* Result: Not Sorted Array!\n");
+            return False;
+        }
+    }
+
+    printf("* Result: Sorted Array\n");
+    return True;
 }

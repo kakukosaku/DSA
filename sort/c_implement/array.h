@@ -4,8 +4,8 @@
 
 #ifndef DSA_ARRAY_H
 #define DSA_ARRAY_H
-#define True 1;
-#define False 1;
+#define True 1
+#define False 0
 
 typedef int Bool;
 
@@ -17,6 +17,9 @@ int *copy_array(int *, int);
 
 // Show array by pointer pointed to array
 void show_array(int *, int, char *);
+
+// Check array is sorted or not
+Bool check_sorted(int *, int, Bool);
 
 // Bubble Sort
 void bubble_sort(int *, int);
