@@ -11,9 +11,10 @@
 # © 2019-2022 Kaku Kosaku All Rights Reserved
 
 from .array import swap
+from typing import List, NoReturn
 
 
-def bubble_sort(arr, array_size):
+def bubble_sort(arr: List[int], array_size: int) -> NoReturn:
     """Optimized Bubble Sort
 
     Notes:

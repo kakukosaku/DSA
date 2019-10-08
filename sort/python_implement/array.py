@@ -44,8 +44,7 @@ def swap(array: List[int], i: int, j: int):
 
 def show_array(array: List[int], description: str) -> NoReturn:
     """Display Function"""
-    print()
-    print("Description:", description, sep="\t")
+    print("\nDescription:", description, sep="\t")
     print("Show Array", array, sep="\t")
 
 
@@ -58,8 +57,8 @@ def check_sorted(array: List[int], reverse=False) -> bool:
             sort = array[i] <= array[i + 1]
 
         if not sort:
-            print("* Result: Not Sorted Array!")
+            print("* Result:\tNot Sorted Array!")
             return False
 
-    print("* Result: Sorted Array!")
+    print("* Result:\tSorted Array!")
     return True

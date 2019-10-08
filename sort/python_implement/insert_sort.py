@@ -10,8 +10,10 @@
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
 
+from typing import List, NoReturn
 
-def insert_sort(arr, array_size):
+
+def insert_sort(arr: List[int], array_size: int) -> NoReturn:
     """Insert Sort
 
     Notes:

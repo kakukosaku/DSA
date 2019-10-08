@@ -2,53 +2,38 @@
 # coding: utf-8
 #
 # author: kaku
-# date: 18/05/08
+# date: 19/10/08
 
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
-# 简单选择排序 Python 实现, 转载请附原链接
+# © 2019-2022 Kaku Kosaku All Rights Reserved
+
+from typing import List, NoReturn
+from .array import swap
 
 
-from random import randint
+def select_sort(arr: List[int], array_size: int) -> NoReturn:
+    """Select Sort
 
+    Notes:
+        1. In Python arguments pass by reference to mutable variables, needn't return arr.
+        2. Pass array size to function `even in Python can get array(list) len on runtime`.
+        3. Replace for loop with while since Python for loop is not friendly to use index.
 
-def select_sort(ls):
-    """简单选择排序
-
-    Args:
-        ls:
-
-    Returns:
+        4. Find the Right position; Move for space; Put it in.
 
     """
-    ls = ls[:]
-    total_compare = 0
-    total_swap = 0
-    for i in range(len(ls)):
-        smaller_index = i
-        # 内层循环确定的依据 *1.欲将有序元素放置哪里, 2.欲以何种方式使用索引比较*
-        for j in range(i + 1, len(ls)):
-            total_compare += 1
-            if ls[smaller_index] > ls[j]:  # 比 *目前记录最小* 元素更小时, 记录
-                smaller_index = j
-        if smaller_index != i:
-            ls[i], ls[smaller_index] = ls[smaller_index], ls[i]
-            total_swap += 1
-    print('\ntotal compare:', total_compare, end='\n')
-    print('\ntotal swap:', total_swap, end='\n\n')
-    return ls
+    i = 0
+    while i < array_size:
+        min_idx = i
+        j = i + 1
+        while j < array_size:
+            # from small to big
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+            j += 1
 
-
-if __name__ == '__main__':
-    ls = list()
-    for _ in range(10):
-        ls.append(randint(0, 100))
-    # 完全反序用以模拟最差情况
-    # ls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-    print('old:')
-    print(ls)
-    sorted_ls = select_sort(ls)
-    print('sorted:')
-    print(sorted_ls)
+        swap(arr, i, min_idx)
+        i += 1
