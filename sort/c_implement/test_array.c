@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include "array.h"
+#include "arrayPlus.h"
 
 #define ARRAY_SIZE 10
 
