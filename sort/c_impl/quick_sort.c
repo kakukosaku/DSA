@@ -2,8 +2,6 @@
 // Created by kaku on 2019/10/7.
 //
 
-#include "array.h"
-
 int partition(int *arr, int low, int high) {
     // Always select low as pivot
     int pivot_val = arr[low];

@@ -2,8 +2,6 @@
 // Created by kaku on 2019/10/7.
 //
 
-#include "array.h"
-
 // you can define array parameter like this `int arr[]`.
 void adjust_down(int arr[], int idx, int array_size) {
     int temp = arr[idx];

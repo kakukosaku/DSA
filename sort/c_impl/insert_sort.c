@@ -2,8 +2,6 @@
 // Created by kaku on 2019/10/7.
 //
 
-#include "array.h"
-
 void insert_sort(int *arr, int array_size) {
     int i, j, temp;
 

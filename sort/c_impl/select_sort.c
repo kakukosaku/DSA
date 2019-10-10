@@ -2,8 +2,6 @@
 // Created by kaku on 2019/10/7.
 //
 
-#include "array.h"
-
 void select_sort(int *arr, int array_size) {
     int max_val;
     int max_idx;
