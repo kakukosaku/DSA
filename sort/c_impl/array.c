@@ -7,10 +7,9 @@
 #include <time.h>
 #include "array.h"
 
-
 int *random_array(int array_size) {
     int tmp;
-    int *arr = malloc(array_size * sizeof(int));
+    int *arr = (int *) malloc(array_size * sizeof(int));
 
     // To generate random int each time call.
     srandom(time(NULL));
@@ -22,9 +21,8 @@ int *random_array(int array_size) {
     return arr;
 }
 
-
 int *copy_array(const int *arr, int array_size) {
-    int *new_arr = malloc(array_size * sizeof(int));
+    int *new_arr = (int *) malloc(array_size * sizeof(int));
     for (int i = 0; i < array_size; i++) {
         new_arr[i] = arr[i];
     }
@@ -33,7 +31,7 @@ int *copy_array(const int *arr, int array_size) {
 }
 
 
-void show_array(int *arr, int array_size, char *description) {
+void show_array(int *arr, int array_size, const char *description) {
     printf("\nDescription:\t%s\nShow Array:\t", description);
     printf("[");
     for (int i = 0; i < array_size; i++) {

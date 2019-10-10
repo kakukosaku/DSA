@@ -7,8 +7,8 @@
 
 #define ARRAY_SIZE 10
 
-void test_case(int * arr, int array_size, char *description, void (*func)(int*, int)) {
-    int * temp_arr;
+void test_case(int *arr, int array_size, const char description[], void (*func)(int *, int)) {
+    int *temp_arr;
     temp_arr = copy_array(arr, ARRAY_SIZE);
     func(temp_arr, array_size);
     show_array(temp_arr, array_size, description);

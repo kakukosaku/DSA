@@ -37,21 +37,21 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
 - 排序算法
     - 交换排序
         - 冒泡排序
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
         - 快速排序
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
     - 选择排序
         - 简单选择
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
         - 堆排序
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
     - 插入排序
         - 直接插入选择
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
         - 希尔排序
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
     - 归并排序
         - 归并选择
-            [C](sort/c_implement) [Go](sort/go_implement)  [Python](sort/python_implement)
+            [C](sort/cpp_impl) [Go](sort/go_impl)  [Python](sort/py_impl)
             
 ### 问题

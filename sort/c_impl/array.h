@@ -16,7 +16,7 @@ int *random_array(int);
 int *copy_array(const int *, int);
 
 // Show array by pointer pointed to array
-void show_array(int *, int, char *);
+void show_array(int *, int, const char *);
 
 // Check array is sorted or not
 Bool check_sorted(const int *, int, Bool);

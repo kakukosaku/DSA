@@ -11,7 +11,7 @@
 # © 2019-2022 Kaku Kosaku All Rights Reserved
 #
 # Usage:
-#   python -m python_implement.test_sort
+#   python -m py_impl.test_sort
 
 from typing import List, NoReturn, Callable
 
