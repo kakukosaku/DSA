@@ -18,11 +18,11 @@ private:
 
 public:
     // Constructor function
-    ArrayPlus(int array_size = 10);
+    explicit Array(int array_size = 10);
 
-    ~ArrayPlus();
+    ~Array();
 
-    friend ostream &operator<<(ostream &os, const ArrayPlus &arr);
+    friend ostream &operator<<(ostream &os, const Array &arr);
 };
 
 #endif //DSA_CPP_ARRAY_H

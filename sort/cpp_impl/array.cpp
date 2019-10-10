@@ -5,11 +5,15 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
-#include "../c_impl/array.h"
+#include <iostream>
+#include "array.h"
 
+using std::cout;
+using std::ostream;
 
 // Constructor Function
-Array::ArrayPlus(int array_size): len(array_size), cap(2*array_size){
+Array::Array(int array_size): len(array_size), cap(2*array_size){
+    cout << "Array Initializing ...\n";
     array = new int[cap];
 
     // To generate random int each time call.
@@ -22,7 +26,17 @@ Array::ArrayPlus(int array_size): len(array_size), cap(2*array_size){
 }
 
 // Destructor Function
-Array::~ArrayPlus() {
+Array::~Array() {
+    cout << "Array Destroying ...\n";
     delete [] array;
 }
 
+// Reload operator <<
+ostream & operator<<(ostream & os, const Array &arr) {
+    cout << "Show Array: [";
+    for (int i = 0; i < arr.len; i++) {
+        cout << arr.array[i] << " ";
+    }
+    cout << "]\n";
+    return os;
+}

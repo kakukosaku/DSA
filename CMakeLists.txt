@@ -23,3 +23,8 @@ add_executable(
         sort/c_impl/heap_sort.c
         sort/c_impl/insert_sort.c
 )
+add_executable(
+        test_array_cpp
+        sort/cpp_impl/test_array.cpp
+        sort/cpp_impl/array.cpp
+)
