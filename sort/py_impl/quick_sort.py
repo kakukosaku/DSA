@@ -18,7 +18,7 @@ def quick_sort(arr: List[int], array_size: int) -> NoReturn:
 
 
 def _quick_sort(arr: List[int], low: int, high: int) -> NoReturn:
-    """Quick Sort
+    """Quick Sort, c style :)
 
     Notes:
         1. In Python arguments pass by reference to mutable variables, needn't return arr.

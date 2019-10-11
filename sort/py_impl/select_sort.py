@@ -15,7 +15,7 @@ from .array import swap
 
 
 def select_sort(arr: List[int], array_size: int) -> NoReturn:
-    """Select Sort
+    """Select Sort, c style :)
 
     Notes:
         1. In Python arguments pass by reference to mutable variables, needn't return arr.

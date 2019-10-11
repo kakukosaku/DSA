@@ -41,7 +41,7 @@ def build_heap(arr: List[int], array_size: int) -> NoReturn:
 
 
 def heap_sort(arr: List[int], array_size: int) -> NoReturn:
-    """Heap sort
+    """Heap sort, c style :)
 
     Notes:
         1. In Python arguments pass by reference to mutable variables, needn't return arr.

@@ -2,67 +2,60 @@
 # coding: utf-8
 #
 # author: kaku
-# date: 18/05/08
+# date: 19/10/10
 
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
-# 归并排序 Python 实现, 转载请附原链接
+# © 2019-2022 Kaku Kosaku All Rights Reserved
+
+from typing import List, NoReturn
 
 
-from random import randint
+def merge(arr: List[int], low: int, mid: int, high: int, arr_tmp: List[int]) -> NoReturn:
+    for i in range(low, high):
+        arr_tmp[i] = arr[i]
+
+    i, j = low, high
+    k = i
+    while i <= mid and j <= high:
+        # from small to lager
+        if arr_tmp[i] >= arr_tmp[j]:
+            arr[k] = arr_tmp[i]
+            j += 1
+        else:
+            arr[k] = arr_tmp[j]
+
+        k += 1
+
+    while i <= mid:
+        arr[k] = arr_tmp[i]
+        i += 1
+        k += 1
+
+    while j <= high:
+        arr[k] = arr_tmp[j]
+        j += 1
+        k += 1
 
 
-def merge_sort(ls):
-    """归并排序
+def _merge_sort(arr: List[int], low: int, high: int, arr_tmp: List[int]) -> NoReturn:
+    """merge sort, c style :)
 
-    Args:
-        ls:
-
-    Returns:
+    Notes:
+        1. In Python arguments pass by reference to mutable variables, needn't return arr.
+        2. Pass array size to function `even in Python can get array(list) len on runtime`.
+        3. Replace for loop with while since Python for loop is not friendly to use index.
 
     """
-    def merge(lls, rls):
-        new_ls = list()
-        l_index = 0
-        r_index = 0
-        while len(new_ls) < len(lls) + len(rls):
-            if l_index < len(lls) and lls[l_index] <= rls[r_index]:
-                new_ls.append(lls[l_index])
-                l_index += 1
-                if l_index >= len(lls):
-                    for tmp in rls[r_index:]:
-                        new_ls.append(tmp)
-                    break
-                continue
-            if r_index < len(rls) and rls[r_index] < lls[l_index]:
-                new_ls.append(rls[r_index])
-                r_index += 1
-                if r_index >= len(rls):
-                    for tmp in lls[l_index:]:
-                        new_ls.append(tmp)
-                    break
-                continue
-
-        return new_ls
-
-    interrupt_point = len(ls) // 2
-    if interrupt_point > 0:  # 注意, 并归不对最小组内大小做区分, 划分的子组最小应为[x]
-        left_ls = merge_sort(ls[:interrupt_point])
-        right_ls = merge_sort(ls[interrupt_point:])
-        return merge(left_ls, right_ls)
-    return ls
+    if low < high:
+        mid = (low + high) // 2
+        _merge_sort(arr, low, mid, arr_tmp)
+        _merge_sort(arr, mid + 1, high, arr_tmp)
+        merge(arr, low, mid, high, arr_tmp)
 
 
-if __name__ == '__main__':
-    ls = list()
-    for _ in range(10):
-        ls.append(randint(0, 100))
-    # 完全反序用以模拟最差情况
-    # ls = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-    print('old:')
-    print(ls)
-    sorted_ls = merge_sort(ls)
-    print('sorted:')
-    print(sorted_ls)
+def merge_sort(arr: List[int], array_size: int):
+    arr_tmp = list(arr)
+    _merge_sort(arr, 0, array_size - 1, arr_tmp)

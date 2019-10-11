@@ -14,7 +14,7 @@ from typing import List, NoReturn
 
 
 def insert_sort(arr: List[int], array_size: int) -> NoReturn:
-    """Insert Sort
+    """Insert Sort, c style :)
 
     Notes:
         1. In Python arguments pass by reference to mutable variables, needn't return arr.
