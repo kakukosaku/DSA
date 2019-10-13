@@ -14,18 +14,19 @@ from typing import List, NoReturn
 
 
 def merge(arr: List[int], low: int, mid: int, high: int, arr_tmp: List[int]) -> NoReturn:
-    for i in range(low, high):
+    for i in range(low, high + 1):
         arr_tmp[i] = arr[i]
 
-    i, j = low, high
+    i, j = low, mid + 1
     k = i
     while i <= mid and j <= high:
         # from small to lager
-        if arr_tmp[i] >= arr_tmp[j]:
+        if arr_tmp[i] <= arr_tmp[j]:
             arr[k] = arr_tmp[i]
-            j += 1
+            i += 1
         else:
             arr[k] = arr_tmp[j]
+            j += 1
 
         k += 1
 
@@ -57,5 +58,6 @@ def _merge_sort(arr: List[int], low: int, high: int, arr_tmp: List[int]) -> NoRe
 
 
 def merge_sort(arr: List[int], array_size: int):
+    # arr_tmp avoid `new` list object each time
     arr_tmp = list(arr)
     _merge_sort(arr, 0, array_size - 1, arr_tmp)

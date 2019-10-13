@@ -7,7 +7,7 @@
 
 void merge(int *arr, int low, int mid, int high, int *arr_tmp) {
     int i, j, k;
-    for (i = low; i < high; i++) {
+    for (i = low; i <= high; i++) {
         arr_tmp[i] = arr[i];
     }
 

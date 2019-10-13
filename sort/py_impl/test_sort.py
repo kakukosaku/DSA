@@ -37,7 +37,7 @@ def main():
     test_case(arr, ARRAY_SIZE, "After Select Sort", select_sort)
     test_case(arr, ARRAY_SIZE, "After Quick Sort", quick_sort)
     test_case(arr, ARRAY_SIZE, "After Heap Sort", heap_sort)
-    test_case(arr, ARRAY_SIZE, "After Merge Sort", heap_sort)
+    test_case(arr, ARRAY_SIZE, "After Merge Sort", merge_sort)
 
 
 if __name__ == '__main__':
