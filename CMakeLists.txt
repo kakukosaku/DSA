@@ -22,6 +22,7 @@ add_executable(
         sort/c_impl/select_sort.c
         sort/c_impl/heap_sort.c
         sort/c_impl/insert_sort.c
+        sort/c_impl/shell_sort.c
         sort/c_impl/merge_sort.c
 )
 add_executable(

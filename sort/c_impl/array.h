@@ -36,6 +36,9 @@ void heap_sort(int *, int);
 // Insert Sort
 void insert_sort(int *, int);
 
+// Shell Sort
+void shell_sort(int *, int);
+
 // Merge Sort
 void merge_sort(int *, int);
 

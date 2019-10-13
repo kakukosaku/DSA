@@ -16,7 +16,7 @@
 from typing import List, NoReturn, Callable
 
 from .array import random_array, show_array, check_sorted
-from . import bubble_sort, insert_sort, select_sort, quick_sort, heap_sort, merge_sort
+from . import bubble_sort, insert_sort, select_sort, quick_sort, heap_sort, merge_sort, shell_sort
 
 ARRAY_SIZE = 10
 
@@ -38,6 +38,7 @@ def main():
     test_case(arr, ARRAY_SIZE, "After Quick Sort", quick_sort)
     test_case(arr, ARRAY_SIZE, "After Heap Sort", heap_sort)
     test_case(arr, ARRAY_SIZE, "After Merge Sort", merge_sort)
+    test_case(arr, ARRAY_SIZE, "After Shell Sort", shell_sort)
 
 
 if __name__ == '__main__':

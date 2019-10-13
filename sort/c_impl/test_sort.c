@@ -27,5 +27,6 @@ int main() {
     test_case(arr, ARRAY_SIZE, "After Quick Sort", quick_sort);
     test_case(arr, ARRAY_SIZE, "After Heap Sort", heap_sort);
     test_case(arr, ARRAY_SIZE, "After Merge Sort", merge_sort);
+    test_case(arr, ARRAY_SIZE, "After Shell Sort", shell_sort);
 }
 
