@@ -3,7 +3,7 @@ project(DSA)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(link_list/c_implement)
+include_directories(linked_list/c_implement)
 include_directories(seq_list/c_implement)
 include_directories(sort/cpp_impl)
 
