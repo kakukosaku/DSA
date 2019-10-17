@@ -4,15 +4,9 @@ project(DSA)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(linked_list/c_implement)
-include_directories(seq_list/c_implement)
-include_directories(sort/cpp_impl)
+include_directories(list/cc_impl)
+include_directories(sort/c_impl)
 
-
-add_executable(
-        test_array
-        sort/c_impl/array.c
-        sort/c_impl/test_array.c
-)
 add_executable(
         test_sort
         sort/c_impl/array.c
@@ -26,7 +20,13 @@ add_executable(
         sort/c_impl/merge_sort.c
 )
 add_executable(
-        test_array_cpp
-        sort/cpp_impl/test_array.cpp
-        sort/cpp_impl/array.cpp
+        test_list
+        list/cc_impl/test_list.cc
+        list/cc_impl/list.cc
+)
+
+add_executable(
+        test_array
+        sort/c_impl/test_array.c
+        sort/c_impl/array.c
 )

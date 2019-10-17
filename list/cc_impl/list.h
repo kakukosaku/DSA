@@ -23,6 +23,14 @@ public:
     ~Array();
 
     friend ostream &operator<<(ostream &os, const Array &arr);
+
+    int Length();
+
+    int LocateElem(int);
+
+    int GetElem(int);
+
+    bool Insert(int, int);
 };
 
 #endif //DSA_CPP_ARRAY_H

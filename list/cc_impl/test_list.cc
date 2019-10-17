@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "array.h"
+#include "list.h"
 
 int main() {
     Array arr(10);
