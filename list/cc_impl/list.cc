@@ -2,9 +2,6 @@
 // Created by kaku on 2019/10/9.
 //
 
-#include <cmath>
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
 #include "list.h"
 
@@ -12,28 +9,64 @@ using std::cout;
 using std::ostream;
 
 // Constructor Function
-Array::Array(int array_size): len(array_size), cap(2*array_size){
-    cout << "Array Constructor is called\n";
-    array = new int[cap];
-
-    // To generate random int each time call.
-    srandom(time(nullptr));
-    int tmp;
-    for (int i = 0; i < array_size; i++) {
-        tmp = (int) random() % 100;
-        *(array + i) = tmp;
+List::List(ElemType arr_[], int array_size_) : len(array_size_), cap(array_size_ * 2) {
+    array = new ElemType[cap];
+    for (int i = 0; i < array_size_; i++) {
+        array[i] = arr_[i];
     }
 }
 
 // Destructor Function
-Array::~Array() {
-    cout << "Array Destroying is called\n";
-    delete [] array;
+List::~List() {
+    delete array;
+}
+
+int List::Length() {
+    return len;
+}
+
+void List::reallocate() {
+    cap *= 2;
+    ElemType *new_array = new ElemType[cap];
+
+    for (int i = 0; i < len; i++) {
+        new_array[i] = array[i];
+    }
+
+    delete array;
+    array = new_array;
+}
+
+bool List::Insert(ElemType ele, int pos) {
+    // Check `pos`, `pos` means index will to insert!
+    if (pos < 0 || pos > len + 1) {
+        return false;
+    }
+
+    // Re-allocate memory if necessary.
+    if (len + 1 > cap) {
+        reallocate();
+    }
+
+    // Insert
+    for (int i = len; i >= pos; i--) {
+        array[i] = array[i - 1];
+    }
+    array[pos] = ele;
+    len += 1;
+
+    return true;
 }
 
 // Reload operator <<
-ostream & operator<<(ostream & os, const Array &arr) {
-    cout << "Show Array:\n\t[";
+ostream &operator<<(ostream &os, const List &arr) {
+    // How to use c style char string and cc style string.
+    char cstr[100];
+    sprintf(cstr, "Show List: len: %d, cap: %d\n", arr.len, arr.cap);
+    string ccstr(cstr);
+
+    cout << ccstr;
+    cout << "\t[";
     for (int i = 0; i < arr.len; i++) {
         cout << arr.array[i] << " ";
     }
