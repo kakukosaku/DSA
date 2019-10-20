@@ -19,7 +19,7 @@ func BubbleSort(s []int) []int {
 			}
 		}
 	}
-	// don't need return slice, in this porpose.
+	// don't need return slice, in this purpose.
 	// we don't grow slice just change the corresponding array value.
 	return s
 }

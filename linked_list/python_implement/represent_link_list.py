@@ -1,16 +1,14 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 # coding: utf-8
 #
 # author: kaku
-# date: 18/08/06
+# date: 19/10/07
 #
 # GitHub:
 #
-#   https://github.com/kakuchange
+#   https://github.com/kakukosaku
 #
-# Description:
-#
-#   How to represent a linked list.
+# © 2019-2022 Kaku Kosaku All Rights Reserved
 
 
 def ensure_ele_decorator(fun):

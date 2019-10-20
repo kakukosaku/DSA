@@ -1,5 +1,5 @@
 /*
-auther: kaku
+author: kaku
 date: 18/08/04 Sat
 github:	https://github.com/kakuchange
 description:
