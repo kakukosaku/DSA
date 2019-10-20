@@ -18,7 +18,7 @@ List::List(ElemType arr_[], int array_size_) : len(array_size_), cap(array_size_
 
 // Destructor Function
 List::~List() {
-    delete array;
+    delete[]array;
 }
 
 int List::Length() {
@@ -33,7 +33,7 @@ void List::reallocate() {
         new_array[i] = array[i];
     }
 
-    delete array;
+    delete[]array;
     array = new_array;
 }
 
