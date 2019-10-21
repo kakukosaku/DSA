@@ -24,9 +24,13 @@ add_executable(
         list/cc_impl/test_list.cc
         list/cc_impl/list.cc
 )
-
 add_executable(
         test_array
         sort/c_impl/test_array.c
         sort/c_impl/array.c
+)
+add_executable(
+        test_linked_list
+        linked_list/cc_impl/test_linked_list.cc
+        linked_list/cc_impl/linked_list.cc
 )
