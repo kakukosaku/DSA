@@ -74,7 +74,7 @@ LNode *get_elem(LinkedList l, int pos) {
     return n;
 }
 
-bool insert_ele(LinkedList l, LNode *n, int pos) {
+bool insert_elem(LinkedList l, LNode *n, int pos) {
     LNode *prior = get_elem(l, pos - 1);
     if (!prior) {
         return false;
@@ -84,4 +84,37 @@ bool insert_ele(LinkedList l, LNode *n, int pos) {
     prior->next = n;
 
     return true;
+}
+
+bool delete_elem(LinkedList l, int pos) {
+    // valid position
+    LNode *p, *q;
+    if (pos < 1) {
+        return false;
+    }
+    p = get_elem(l, pos - 1);
+    if (!p) {
+        return false;
+    }
+
+    // delete operation
+    q = p->next;
+    p->next = q->next;
+    delete q;
+
+    return true;
+}
+
+void reverse_linked_list(LinkedList l) {
+    // Notice: this implement has head node :)
+    LNode *prior = nullptr, *curr = l->next, *next = nullptr;
+
+    while (curr) {
+        next = curr->next;
+        curr->next = prior;
+
+        prior = curr;
+        curr = next;
+    }
+    l->next = prior;
 }

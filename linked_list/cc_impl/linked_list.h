@@ -22,6 +22,10 @@ LinkedList tail_insert_linked_list(const ElemType [], int);
 
 LNode *get_elem(LinkedList, int);
 
-bool insert_ele(LinkedList, LNode *, int);
+bool insert_elem(LinkedList, LNode *, int);
+
+bool delete_elem(LinkedList, int);
+
+void reverse_linked_list(LinkedList);
 
 #endif //DSA_LINKED_LIST_H

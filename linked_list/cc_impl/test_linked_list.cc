@@ -18,7 +18,13 @@ int main() {
     LNode *n = get_elem(l, 3);
     show_node(n);
 
-    LNode n1 = {9, nullptr};
-    insert_ele(l, &n1, 3);
+    LNode *n1 = new LNode {9, nullptr};
+    insert_elem(l, n1, 3);
+    show_linked_list(l);
+
+    delete_elem(l, 3);
+    show_linked_list(l);
+
+    reverse_linked_list(l);
     show_linked_list(l);
 }
