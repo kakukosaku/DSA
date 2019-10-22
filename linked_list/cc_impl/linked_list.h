@@ -14,8 +14,14 @@ typedef struct LNode {
 
 void show_linked_list(LinkedList);
 
+void show_node(LNode *);
+
 LinkedList head_insert_linked_list(const ElemType [], int);
 
 LinkedList tail_insert_linked_list(const ElemType [], int);
+
+LNode *get_elem(LinkedList, int);
+
+bool insert_ele(LinkedList, LNode *, int);
 
 #endif //DSA_LINKED_LIST_H

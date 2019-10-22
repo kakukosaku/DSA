@@ -19,6 +19,11 @@ void show_linked_list(LinkedList l) {
     cout << "nullptr\n";
 }
 
+void show_node(LNode *n) {
+    cout << "Show LNode:\n";
+    cout << "\tdata: " << n->data;
+    cout << "\tnext: -> " << n->next->data << endl;
+}
 
 LinkedList head_insert_linked_list(const ElemType arr[], int arr_size) {
     LNode *n;
@@ -50,4 +55,33 @@ LinkedList tail_insert_linked_list(const ElemType arr[], int arr_size) {
 
     r->next = nullptr;
     return l;
+}
+
+LNode *get_elem(LinkedList l, int pos) {
+    int i = 1;
+    if (pos == 0) {
+        return l;
+    }
+    if (pos < 1) {
+        return nullptr;
+    }
+    LNode *n = l->next;
+    while (n && i < pos) {
+        n = n->next;
+        i++;
+    }
+
+    return n;
+}
+
+bool insert_ele(LinkedList l, LNode *n, int pos) {
+    LNode *prior = get_elem(l, pos - 1);
+    if (!prior) {
+        return false;
+    }
+
+    n->next = prior->next;
+    prior->next = n;
+
+    return true;
 }
