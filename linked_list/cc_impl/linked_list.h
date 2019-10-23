@@ -7,6 +7,7 @@
 
 typedef int ElemType;
 
+// Linked List
 typedef struct LNode {
     ElemType data;
     struct LNode *next;
@@ -27,5 +28,12 @@ bool insert_elem(LinkedList, LNode *, int);
 bool delete_elem(LinkedList, int);
 
 void reverse_linked_list(LinkedList);
+
+
+// Double Linked List
+typedef struct DNode {
+    ElemType data;
+    struct DNode *prior, *next;
+}DNode, *DLinkedList;
 
 #endif //DSA_LINKED_LIST_H
