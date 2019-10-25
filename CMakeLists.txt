@@ -34,4 +34,4 @@ add_executable(
         linked_list/cc_impl/test_linked_list.cc
         linked_list/cc_impl/linked_list.cc
 )
-add_executable(test_two_sum leetcode/1/test_two_sum.c)
+add_executable(two_sum leetcode/1_two_sum/two_sum.c)
