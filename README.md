@@ -5,16 +5,26 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
 ## Data Structure
 
 ### 主题
+
 - 前言
     - 基本概念
-        [Concept](basic_concept.md#Overview)
+        [Concept](theory.md#Basic-Concepts)
     
 - 线性表
+    - 顺序表
+        [Concept](theory.md#Liner-Table)
+        [Implementation](list)
+    - 链表
+        [Concept](theory.md#Liner-Table)
+        [Implementation](linked_list)
     - 栈
-        [Concept](basic_concept.md)
+        [Concept](theory.md#Stack-and-Queue)
+        [Implementation](stack)
     - 队列
-    - 堆
-    - 串
+        [Concept](theory.md#Stack-and-Queue)
+        [Implementation](queue)
+    - 矩阵
+        [Concept](theory.md#Matirx)
 
 - 树
     - 二叉树
@@ -24,6 +34,7 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
         - 最小生成树
         - 二叉排序树/平衡二叉树(AVL)
         - 多路查找树(B树)
+        
     - 森林
         - 转化
     
@@ -37,7 +48,9 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
 ## Algorithm
 
 ### 主题
-- 前方
+
+- 前言
+
 - 排序算法
     - 交换排序
         - 冒泡排序
