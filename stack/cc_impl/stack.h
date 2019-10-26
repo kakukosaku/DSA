@@ -10,14 +10,13 @@ typedef int ElemType;
 // Sequence List Representation
 typedef struct {
     ElemType *data;
-    int bottom;
     int top;
 } SeqStack;
 
 // Linked List Representation
 typedef struct SNode {
     ElemType data;
-    struct SNode *next, *bottom, *top;
+    struct SNode *next;
 }LinkedStack;
 
 #endif //DSA_STACK_H
