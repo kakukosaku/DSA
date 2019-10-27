@@ -34,5 +34,11 @@ add_executable(
         linked_list/cc_impl/test_linked_list.cc
         linked_list/cc_impl/linked_list.cc
 )
+add_executable(
+        test_binary_tree
+        tree/cc_impl/test_binary_tree.cc
+        tree/cc_impl/binary_tree.cc
+)
+
 add_executable(two_sum leetcode/1_two_sum/two_sum.c)
 add_executable(add_two_numbers leetcode/2_add_two_numbers/add_two_numbers.cc)
