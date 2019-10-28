@@ -13,4 +13,16 @@ int main() {
     show_tree_node(t->lchild);
     show_tree_node(t->rchild);
     show_tree_node(t->lchild->lchild);
+
+    cout << "\nPre Order:\n\t";
+    pre_order_recursive(t);
+
+    cout << "\nIn Order:\n\t";
+    in_order_recursive(t);
+
+    cout << "\nPost Order:\n\t";
+    post_order_recursive(t);
+
+    cout << "\nLevel Order:\n\t";
+    level_order(t);
 }

@@ -21,6 +21,17 @@ typedef struct BiTNode {
 
 BiTree init_tree_from_array(vector<int>);
 
+void pre_order_recursive(BiTree);
+
+void in_order_recursive(BiTree);
+
+void post_order_recursive(BiTree);
+
+void level_order(BiTree);
+
 void show_tree_node(BiTNode *);
+
+template<class T>
+void print_vector(const vector<T> &v);
 
 #endif //DSA_BINARY_TREE_H

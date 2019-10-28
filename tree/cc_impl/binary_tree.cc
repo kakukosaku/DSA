@@ -29,6 +29,7 @@ void show_tree_node(BiTNode *n) {
 }
 
 BiTree init_tree_from_array(vector<int> v) {
+    cout << "Row vector:\n\t";
     print_vector(v);
     int d;
     vector<BiTNode *> tmp_v;
@@ -64,4 +65,49 @@ BiTree init_tree_from_array(vector<int> v) {
     }
 
     return t;
+}
+
+void pre_order_recursive(BiTree t) {
+    if (t) {
+        cout << t->data << " ";
+        pre_order_recursive(t->lchild);
+        pre_order_recursive(t->rchild);
+    }
+}
+
+void in_order_recursive(BiTree t) {
+    if (t) {
+        in_order_recursive(t->lchild);
+        cout << t->data << " ";
+        in_order_recursive(t->rchild);
+    }
+}
+
+void post_order_recursive(BiTree t) {
+    if (t) {
+        post_order_recursive(t->lchild);
+        post_order_recursive(t->rchild);
+        cout << t->data << " ";
+    }
+}
+
+void level_order(BiTree t) {
+    vector<BiTNode *> queue;
+    BiTNode * n;
+
+    n = t;
+    queue.insert(queue.begin(), n);
+    while (!queue.empty()) {
+        n = queue[queue.size() - 1];
+        cout << n->data << " ";
+        queue.pop_back();
+
+        if (n->lchild) {
+            queue.insert(queue.begin(), n->lchild);
+        }
+
+        if (n->rchild) {
+            queue.insert(queue.begin(), n->rchild);
+        }
+    }
 }
