@@ -27,13 +27,16 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
         [Concept](theory.md#Matirx)
 
 - 树
-    - 二叉树
-        - 完全二叉树
-        - 线索二叉树
-        - 赫夫曼树  
-        - 最小生成树
-        - 二叉排序树/平衡二叉树(AVL)
-        - 多路查找树(B树)
+    - 完全二叉树(满二叉树)
+        [Concept](theory.md#Binary-Tree)
+        [Implementation](tree)
+    - 线索二叉树
+        [Concept](theory.md#Binary-Tree)
+        [Implementation](tree)
+    - 赫夫曼树  
+    - 最小生成树
+    - 二叉排序树/平衡二叉树(AVL)
+    - 多路查找树(B树)
         
     - 森林
         - 转化
