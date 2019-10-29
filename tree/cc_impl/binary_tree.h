@@ -23,9 +23,15 @@ BiTree init_tree_from_array(vector<int>);
 
 void pre_order_recursive(BiTree);
 
+void pre_order(BiTree);
+
 void in_order_recursive(BiTree);
 
+void in_order(BiTree);
+
 void post_order_recursive(BiTree);
+
+void post_order(BiTree);
 
 void level_order(BiTree);
 

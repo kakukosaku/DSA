@@ -16,12 +16,18 @@ int main() {
 
     cout << "\nPre Order:\n\t";
     pre_order_recursive(t);
+    cout << "\nPre Order non-recursive:\n\t";
+    pre_order(t);
 
     cout << "\nIn Order:\n\t";
     in_order_recursive(t);
+    cout << "\nIn Order non-recursive:\n\t";
+    in_order(t);
 
     cout << "\nPost Order:\n\t";
     post_order_recursive(t);
+    cout << "\nPost Order non-recursive:\n\t";
+    post_order(t);
 
     cout << "\nLevel Order:\n\t";
     level_order(t);

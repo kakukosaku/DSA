@@ -75,6 +75,23 @@ void pre_order_recursive(BiTree t) {
     }
 }
 
+void pre_order(BiTree t) {
+    vector<BiTNode *> stack;
+    auto p = t;
+
+    while (p || !stack.empty()) {
+        if (p) {
+            stack.insert(stack.end(), p);
+            cout << p->data << " ";
+            p = p->lchild;
+        } else {
+            p = stack[stack.size() - 1];
+            stack.pop_back();
+            p = p->rchild;
+        }
+    }
+}
+
 void in_order_recursive(BiTree t) {
     if (t) {
         in_order_recursive(t->lchild);
@@ -83,11 +100,55 @@ void in_order_recursive(BiTree t) {
     }
 }
 
+void in_order(BiTree t) {
+    vector<BiTNode *> stack;
+    auto p = t;
+
+    while (p || !stack.empty()) {
+        if (p) {
+            stack.insert(stack.end(), p);
+            p = p->lchild;
+        } else {
+            p = stack[stack.size() - 1];
+            stack.pop_back();
+            cout << p->data << " ";
+            p = p->rchild;
+        }
+    }
+}
+
 void post_order_recursive(BiTree t) {
     if (t) {
         post_order_recursive(t->lchild);
         post_order_recursive(t->rchild);
         cout << t->data << " ";
+    }
+}
+
+void post_order(BiTree t) {
+    vector<BiTNode *> first_queue, second_queue;
+    BiTNode * n;
+
+    first_queue.insert(first_queue.begin(), t);
+
+    while (!first_queue.empty()) {
+        n = first_queue[first_queue.size() - 1];
+        first_queue.pop_back();
+        second_queue.push_back(n);
+
+        if (n->lchild) {
+            first_queue.push_back(n->lchild);
+        }
+
+        if (n->rchild) {
+            first_queue.push_back(n->rchild);
+        }
+    }
+
+    while (!second_queue.empty()) {
+        n = second_queue[second_queue.size() - 1];
+        second_queue.pop_back();
+        cout << n->data << " ";
     }
 }
 
