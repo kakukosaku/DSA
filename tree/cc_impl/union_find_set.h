@@ -17,4 +17,11 @@ typedef struct UFSet {
     int count;
 };
 
+// Initial
+void initial(ElemType []);
+
+void find(ElemType [], int);
+
+void union_operation(ElemType [], int, int)
+
 #endif //DSA_UNION_FIND_SET_H
