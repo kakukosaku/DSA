@@ -31,15 +31,17 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
         [Concept](theory.md#Binary-Tree)
         [Implementation](tree)
     - 线索二叉树
-        [Concept](theory.md#Binary-Tree)
+        [Concept](theory.md#Thread-Tree)
         [Implementation](tree)
-    - 赫夫曼树  
-    - 最小生成树
+    - 赫夫曼树
+        [Concept](theory.md#Huffman-Tree)
+        [Implementation](tree)
     - 二叉排序树/平衡二叉树(AVL)
+        [Concept](theory.md#Balanced-Binary-Search-Tree)
+        [Implementation](tree)
+    - 最小生成树
     - 多路查找树(B树)
-        
-    - 森林
-        - 转化
+    - 森林与树转化[Concept](theory.md#Tree-And-Forest)
     
 - 图
     - 存储结构
