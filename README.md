@@ -4,7 +4,7 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
 
 ## Data Structure
 
-### 主题
+### Topic
 
 - 前言
     - 基本概念
@@ -40,21 +40,31 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
         [Concept](theory.md#Balanced-Binary-Search-Tree)
         [Implementation](tree)
     - 最小生成树
-    - 多路查找树(B树)
     - 森林与树转化[Concept](theory.md#Tree-And-Forest)
+    - 多路查找树(B树)
     
 - 图
     - 存储结构
+        [Concept](theory.md#Graph)
     - 遍历方式
+        [Concept](theory.md#Graph)
     - 最小生成树
+        [Concept](theory.md#Graph)
     - 最短路径
+        [Concept](theory.md#Graph)
+    - 拓扑排序
+        [Concept](theory.md#Graph)
     - 关键路径
+        [Concept](theory.md#Graph)
 
 ## Algorithm
 
-### 主题
+### Topic
 
-- 前言
+- 查找
+    - 顺序查找与折半查找
+    - B树和B+树
+    - 散列表
 
 - 排序算法
     - 交换排序
@@ -76,4 +86,4 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
         - 归并选择
             [C](sort/c_impl/merge_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/merge_sort.py)
             
-### 问题
+### Problem
