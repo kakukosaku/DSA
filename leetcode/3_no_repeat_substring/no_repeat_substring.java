@@ -14,18 +14,18 @@ import java.util.Map;
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> recordMap = new HashMap<>();
-        int start_index = 0, maxNoRepeatSubStringLen = 0;
+        int startIndex = 0, maxNoRepeatSubStringLen = 0;
         int i;
         for (i = 0; i < s.length(); i++) {
-            Character checking_char = s.charAt(i);
-            Integer idx = recordMap.get(checking_char);
+            Character checkingChar = s.charAt(i);
+            Integer idx = recordMap.get(checkingChar);
             // 解决hashMap中存在早于start_index的无用值, 对判断重复子串的影响
-            if (idx == null || (idx != null && idx < start_index)) {
-                recordMap.put(checking_char, i);
-                maxNoRepeatSubStringLen = (i - start_index + 1) > maxNoRepeatSubStringLen ? i - start_index + 1 : maxNoRepeatSubStringLen;
+            if (idx == null || (idx != null && idx < startIndex)) {
+                recordMap.put(checkingChar, i);
+                maxNoRepeatSubStringLen = (i - startIndex + 1) > maxNoRepeatSubStringLen ? i - startIndex + 1 : maxNoRepeatSubStringLen;
             } else {
-                start_index = recordMap.get(checking_char) + 1;
-                recordMap.put(checking_char, i);
+                startIndex = recordMap.get(checkingChar) + 1;
+                recordMap.put(checkingChar, i);
             }
         }
 
