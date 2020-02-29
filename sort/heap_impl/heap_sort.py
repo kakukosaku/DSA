@@ -9,32 +9,33 @@
 #   https://github.com/kakukosaku
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
-
 from typing import List, NoReturn
-from .array import swap
+from utils.sort_utils import swap
 
 
-def adjust_down(arr: List[int], idx: int, array_size: int) -> NoReturn:
-    the_ele = arr[idx]
-    i = 2 * idx + 1  # left child
-    while i < array_size:
-        if i < array_size - 1 and arr[i] < arr[i + 1]:
-            i += 1
+def adjust_down(arr: List[int], check_idx: int, array_size: int) -> NoReturn:
+    the_ele = arr[check_idx]
 
-        if the_ele > arr[i]:
+    while check_idx * 2 + 1 < array_size:
+        l_child_idx = (2 * check_idx) + 1
+        r_child_idx = (2 * check_idx) + 2
+        bigger_child_idx = l_child_idx
+
+        if r_child_idx < array_size and arr[l_child_idx] < arr[r_child_idx]:
+            bigger_child_idx = r_child_idx
+
+        if the_ele > arr[bigger_child_idx]:
             break
         else:
-            arr[idx] = arr[i]
-            idx = i
-
-        i = 2 * i + 1
+            arr[check_idx] = arr[bigger_child_idx]
+            check_idx = bigger_child_idx
 
     # Find the position & move for place & put right position.
-    arr[idx] = the_ele
+    arr[check_idx] = the_ele
 
 
 def build_heap(arr: List[int], array_size: int) -> NoReturn:
-    i = array_size // 2
+    i = (array_size // 2) - 1
     while i >= 0:
         adjust_down(arr, i, array_size)
         i -= 1
@@ -53,8 +54,10 @@ def heap_sort(arr: List[int], array_size: int) -> NoReturn:
     """
     build_heap(arr, array_size)
 
-    i = 1
-    while i < array_size:
-        swap(arr, 0, array_size - i)
-        adjust_down(arr, 0, array_size - i)
-        i += 1
+    sorted_num = 1
+    while sorted_num < array_size:
+        swap(arr, 0, array_size - sorted_num)
+        adjust_down(arr, 0, array_size - sorted_num)
+        sorted_num += 1
+
+    return arr
