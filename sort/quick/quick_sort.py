@@ -10,14 +10,15 @@
 #
 # © 2019-2022 Kaku Kosaku All Rights Reserved
 
-from typing import List, NoReturn
+from typing import List
 
 
-def quick_sort(arr: List[int], array_size: int) -> NoReturn:
-    _quick_sort(arr, 0, array_size - 1)
+def quick_sort_test_wrap(arr: List[int], array_size: int) -> List[int]:
+    """for invoker test_case reason..."""
+    return quick_sort(arr, 0, array_size - 1)
 
 
-def _quick_sort(arr: List[int], low: int, high: int) -> NoReturn:
+def quick_sort(arr: List[int], low: int, high: int) -> List[int]:
     """Quick Sort, c style :)
 
     Notes:
@@ -28,8 +29,10 @@ def _quick_sort(arr: List[int], low: int, high: int) -> NoReturn:
     """
     if low < high:
         pivot = partition(arr, low, high)
-        _quick_sort(arr, low, pivot - 1)
-        _quick_sort(arr, pivot + 1, high)
+        quick_sort(arr, low, pivot - 1)
+        quick_sort(arr, pivot + 1, high)
+    
+    return arr
 
 
 def partition(arr: List[int], low: int, high: int) -> int:

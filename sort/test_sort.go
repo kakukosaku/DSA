@@ -11,6 +11,7 @@ package main
 import (
 	"github.com/kakukosaku/DSA/sort/bubble"
 	"github.com/kakukosaku/DSA/sort/insert"
+	"github.com/kakukosaku/DSA/sort/quick"
 	"github.com/kakukosaku/DSA/sort/utils"
 	selectimpl "github.com/kakukosaku/DSA/sort/select_impl"
 	heapimpl "github.com/kakukosaku/DSA/sort/heap_impl"
@@ -34,4 +35,5 @@ func main() {
 	testCase(arr, len(arr), "After insert sort", insert.InsertSort)
 	testCase(arr, len(arr), "After select sort", selectimpl.SelectSort)
 	testCase(arr, len(arr), "After heap sort", heapimpl.HeapSort)
+	testCase(arr, len(arr), "After quick sort", quick.QuickSortTestWrap)
 }

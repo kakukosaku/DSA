@@ -20,6 +20,7 @@ from bubble.bubble_sort import bubble_sort
 from insert.insert_sort import insert_sort
 from select_impl.select_sort import select_sort
 from heap_impl.heap_sort import heap_sort
+from quick.quick_sort import quick_sort_test_wrap
 
 ARRAY_SIZE = 10
 
@@ -38,6 +39,7 @@ def main():
     test_case(arr, ARRAY_SIZE, "After insert Sort", insert_sort)
     test_case(arr, ARRAY_SIZE, "After select Sort", select_sort)
     test_case(arr, ARRAY_SIZE, "After heap Sort", heap_sort)
+    test_case(arr, ARRAY_SIZE, "After quick Sort", quick_sort_test_wrap)
 
 
 if __name__ == '__main__':
