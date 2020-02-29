@@ -22,9 +22,9 @@ def quick_sort(arr: List[int], low: int, high: int) -> List[int]:
     """Quick Sort, c style :)
 
     Notes:
-        1. In Python arguments pass by reference to mutable variables, needn't return arr.
-        2. Pass array size to function `even in Python can get array(list) len on runtime`.
-        3. Replace for loop with while since Python for loop is not friendly to use index.
+        1. Arguments pass by reference for mutable variables, needn't return arr.
+        2. Pass array size to function although `can get array len on runtime in Python`.
+        3. Use while loop instead for loop as for loop is not friendly to use index.
 
     """
     if low < high:

@@ -12,6 +12,7 @@ func QuickSortTestWrap(arr []int) []int {
 	return QuickSort(arr, 0, len(arr)-1)
 }
 
+// QuickSort quick sort use low base pivot
 func QuickSort(arr []int, low, high int) []int {
 	if low < high {
 		pivot := partition(arr, low, high)
