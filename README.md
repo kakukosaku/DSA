@@ -68,22 +68,15 @@ This Repository is about [Data Structure](#Data-Structure) and [Algorithm](#Algo
 
 - 排序算法
     - 交换排序
-        - 冒泡排序
-            [C](sort/c_impl/bubbl_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/bubble_sort.py)
-        - 快速排序
-            [C](sort/c_impl/quick_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/quick_sort.py)
+        - 冒泡排序 [C](sort/c_impl) [Go/Python](sort/bubble)
+        - 快速排序 [C](sort/c_impl) [Go/Python](sort/quick)
     - 选择排序
-        - 简单选择
-            [C](sort/c_impl/select_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/select_sort.py)
-        - 堆排序
-            [C](sort/c_impl/heap_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/heap_sort.py)
+        - 简单选择 [C](sort/c_impl) [Go/Python](sort/select_impl)
+        - 堆排序 [C](sort/c_impl) [Go/Python](sort/heap_impl)
     - 插入排序
-        - 直接插入选择
-            [C](sort/c_impl/insert_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/insert_sort.py)
-        - 希尔排序
-            [C](sort/c_impl/shell_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/shell_sort.py)
+        - 直接插入选择 [C](sort/c_impl) [Go/Python](sort/insert)
+        - 希尔排序 [C](sort/c_impl) [Go/Python](sort/shell)
     - 归并排序
-        - 归并选择
-            [C](sort/c_impl/merge_sort.c) [Go](sort/go_impl)  [Python](sort/py_impl/merge_sort.py)
+        - 归并选择 [C](sort/c_impl) [Go/Python](sort/merge)
             
 ### Problem
