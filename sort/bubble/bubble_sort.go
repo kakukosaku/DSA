@@ -17,6 +17,7 @@ func BubbleSort(arr []int) []int {
 
 	for sortedNum < len(arr) {
 		if moved {
+			moved = false
 			for checkIdx := 0; checkIdx < len(arr)-sortedNum-1; checkIdx ++ {
 				// small -> big
 				if arr[checkIdx] > arr[checkIdx+1] {
