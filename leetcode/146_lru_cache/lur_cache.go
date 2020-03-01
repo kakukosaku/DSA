@@ -5,7 +5,7 @@
 //   https://github.com/kakukosaku
 //
 // Description:
-//		leetcode #146146146 https://leetcode-cn.com/problems/lru-cache/
+//		leetcode #146 https://leetcode-cn.com/problems/lru-cache/
 package main
 
 import (
