@@ -14,16 +14,9 @@ import (
 )
 
 func main() {
-	arr := []int{1, 2, 3, 4, 5, 6, 7}
-	//arr := []int{1}
-	//arr := []int{}
-	arrInterface := make([]interface{}, len(arr))
-	for i, v := range arr {
-		arrInterface[i] = v
-	}
-
+	s := []int{1, 2, 3, 4, 5, 6, 7}
 	l := linklist.New()
-	l.AddSlice(arrInterface)
+	l.AddSlice(s...)
 	l.Show()
 
 	reverse.ReverseLinkList(l)

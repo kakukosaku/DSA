@@ -13,14 +13,16 @@ import (
 )
 
 func ReverseLinkList(l *linklist.LinkList) {
-	var prev *linklist.Node
-	curr := l.HeadPtr.Next
-	for curr != nil {
-		tmpNode := curr.Next
-		curr.Next = prev
-		prev = curr
-		curr = tmpNode
+	prevNodePtr := &linklist.Node{}
+	currNodePtr := l.Head
+	l.Tail = l.Head
+	for currNodePtr != nil {
+		nextNodePtr := currNodePtr.Next
+		currNodePtr.Next = prevNodePtr
+		prevNodePtr = currNodePtr
+		currNodePtr = nextNodePtr
 	}
-
-	l.HeadPtr.Next = prev
+	l.Head = prevNodePtr
+	// Important!
+	l.Tail.Next = nil
 }
