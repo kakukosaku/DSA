@@ -1,6 +1,6 @@
 /*
  * author: kaku
- * date: 2019/月/日
+ * date: 2020/月/日
  * 
  * GitHub:
  *   https://github.com/kakukosaku
