@@ -17,5 +17,6 @@ cmake-build-debug/
 
 # tmp file
 t.*
+t2.*
 *.class
 *.icloud
