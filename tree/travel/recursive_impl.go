@@ -5,16 +5,44 @@ import (
 	"github.com/kakukosaku/DSA/tree/tree"
 )
 
-func PreorderRecursive(t *tree.Tree) {
+func PreOrderRecursive(t *tree.Tree) {
 	fmt.Printf("Tree pre-order recursive travel:\n\t")
-	preorderRecursive(t.Root)
+	preOrderRecursive(t.Root)
 	fmt.Println()
 }
 
-func preorderRecursive(n *tree.Node) {
+func preOrderRecursive(n *tree.Node) {
 	if n != nil {
 		fmt.Printf("%v -> ", n.Elem)
-		preorderRecursive(n.LChild)
-		preorderRecursive(n.RChild)
+		preOrderRecursive(n.LChild)
+		preOrderRecursive(n.RChild)
+	}
+}
+
+func InOrderRecursive(t *tree.Tree) {
+	fmt.Printf("Tree in-order recursive travel:\n\t")
+	inOrderRecursive(t.Root)
+	fmt.Println()
+}
+
+func inOrderRecursive(n *tree.Node) {
+	if n != nil {
+		inOrderRecursive(n.LChild)
+		fmt.Printf("%v -> ", n.Elem)
+		inOrderRecursive(n.RChild)
+	}
+}
+
+func PostOrderRecursive(t *tree.Tree) {
+	fmt.Printf("Tree post-order recursive travel:\n\t")
+	postOrderRecursive(t.Root)
+	fmt.Println()
+}
+
+func postOrderRecursive(n *tree.Node) {
+	if n != nil {
+		postOrderRecursive(n.LChild)
+		postOrderRecursive(n.RChild)
+		fmt.Printf("%v -> ", n.Elem)
 	}
 }

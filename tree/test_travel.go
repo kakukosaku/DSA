@@ -9,6 +9,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/kakukosaku/DSA/tree/travel"
 	"github.com/kakukosaku/DSA/tree/utils"
 )
@@ -20,4 +21,12 @@ func main() {
 	travel.PreOrder(t)
 	travel.InOrder(t)
 	travel.PostOrder(t)
+
+	fmt.Println()
+	fmt.Println("Recursive Implementation:")
+	fmt.Println()
+
+	travel.PreOrderRecursive(t)
+	travel.InOrderRecursive(t)
+	travel.PostOrderRecursive(t)
 }
