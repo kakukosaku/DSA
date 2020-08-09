@@ -14,3 +14,8 @@ cmake-build-debug/
 
 # vs code tmp files
 .vscode/
+
+# tmp file
+t.*
+*.class
+*.icloud
