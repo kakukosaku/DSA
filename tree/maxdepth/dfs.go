@@ -9,7 +9,7 @@
 package maxdepth
 
 import (
-	"github.com/kakukosaku/DSA/tree/tree"
+	"github.com/kakukosaku/DSA/tree"
 )
 
 // NodeMaxDepth recursive dfs get max depth
@@ -18,8 +18,8 @@ func DFSMaxDepthRecursive(t *tree.Node) int {
 		return 0
 	}
 
-	lMaxDepth := DFSMaxDepthRecursive(t.LChild)
-	rMaxDepth := DFSMaxDepthRecursive(t.RChild)
+	lMaxDepth := DFSMaxDepthRecursive(t.Left)
+	rMaxDepth := DFSMaxDepthRecursive(t.Right)
 
 	maxNum := lMaxDepth
 	if rMaxDepth > lMaxDepth {

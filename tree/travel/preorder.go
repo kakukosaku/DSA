@@ -9,37 +9,31 @@
 package travel
 
 import (
-	"fmt"
-	"github.com/kakukosaku/DSA/stack/stack"
-	"github.com/kakukosaku/DSA/tree/tree"
-	"log"
+	"container/list"
+	"github.com/kakukosaku/DSA/tree"
 )
 
-func PreOrder(t *tree.Tree) {
-	if t.Root == nil {
-		log.Fatal("tree is empty")
+func PreOrder(root *tree.Node) []int {
+	travelRest := make([]int, 0)
+	if root == nil {
+		return travelRest
 	}
 
-	currNode := t.Root
-	s := stack.New()
-	s.PushStack(stack.LinkNode{Elem: currNode})
-	fmt.Printf("Tree pre-order travel:\n\t")
-	for !s.IsEmpty() {
-		qn, err := s.PopStack()
-		if err != nil {
-			log.Fatal("stack is empty already")
+	stack := list.New()
+	stack.PushFront(root)
+	for stack.Len() != 0 {
+		elem := stack.Front()
+		node := elem.Value.(*tree.Node)
+		stack.Remove(elem)
+		travelRest = append(travelRest, node.Val)
+
+		if node.Right != nil {
+			stack.PushFront(node.Right)
 		}
-
-		tn := qn.Elem.(*tree.Node)
-		fmt.Printf("%v -> ", tn.Elem)
-
-		if tn.RChild != nil {
-			s.PushStack(stack.LinkNode{Elem: tn.RChild})
-		}
-
-		if tn.LChild != nil {
-			s.PushStack(stack.LinkNode{Elem: tn.LChild})
+		if node.Left != nil {
+			stack.PushFront(node.Left)
 		}
 	}
-	fmt.Println()
+
+	return travelRest
 }

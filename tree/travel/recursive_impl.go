@@ -1,48 +1,35 @@
 package travel
 
 import (
-	"fmt"
-	"github.com/kakukosaku/DSA/tree/tree"
+	"github.com/kakukosaku/DSA/tree"
 )
 
-func PreOrderRecursive(t *tree.Tree) {
-	fmt.Printf("Tree pre-order recursive travel:\n\t")
-	preOrderRecursive(t.Root)
-	fmt.Println()
-}
-
-func preOrderRecursive(n *tree.Node) {
-	if n != nil {
-		fmt.Printf("%v -> ", n.Elem)
-		preOrderRecursive(n.LChild)
-		preOrderRecursive(n.RChild)
+func PreOrderRecursive(node *tree.Node, travelRest []int) []int {
+	if node == nil {
+		return travelRest
 	}
+	travelRest = append(travelRest, node.Val)
+	travelRest = PreOrderRecursive(node.Left, travelRest)
+	travelRest = PreOrderRecursive(node.Right, travelRest)
+	return travelRest
 }
 
-func InOrderRecursive(t *tree.Tree) {
-	fmt.Printf("Tree in-order recursive travel:\n\t")
-	inOrderRecursive(t.Root)
-	fmt.Println()
-}
-
-func inOrderRecursive(n *tree.Node) {
-	if n != nil {
-		inOrderRecursive(n.LChild)
-		fmt.Printf("%v -> ", n.Elem)
-		inOrderRecursive(n.RChild)
+func InOrderRecursive(node *tree.Node, travelRest []int) []int {
+	if node == nil {
+		return travelRest
 	}
+	travelRest = InOrderRecursive(node.Left, travelRest)
+	travelRest = append(travelRest, node.Val)
+	travelRest = InOrderRecursive(node.Right, travelRest)
+	return travelRest
 }
 
-func PostOrderRecursive(t *tree.Tree) {
-	fmt.Printf("Tree post-order recursive travel:\n\t")
-	postOrderRecursive(t.Root)
-	fmt.Println()
-}
-
-func postOrderRecursive(n *tree.Node) {
-	if n != nil {
-		postOrderRecursive(n.LChild)
-		postOrderRecursive(n.RChild)
-		fmt.Printf("%v -> ", n.Elem)
+func PostOrderRecursive(node *tree.Node, travelRest []int) []int {
+	if node == nil {
+		return travelRest
 	}
+	travelRest = PostOrderRecursive(node.Left, travelRest)
+	travelRest = PostOrderRecursive(node.Right, travelRest)
+	travelRest = append(travelRest, node.Val)
+	return travelRest
 }

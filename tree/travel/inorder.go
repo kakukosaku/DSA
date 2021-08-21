@@ -9,37 +9,34 @@
 package travel
 
 import (
-	"fmt"
-	"github.com/kakukosaku/DSA/stack/stack"
-	"github.com/kakukosaku/DSA/tree/tree"
-	"log"
+	"container/list"
+	"github.com/kakukosaku/DSA/tree"
 )
 
-func InOrder(t *tree.Tree) {
-	if t.Root == nil {
-		log.Fatal("tree is empty")
+func InOrder(root *tree.Node) []int {
+	travelRest := make([]int, 0)
+	if root == nil {
+		return travelRest
 	}
 
-	s := stack.New()
-	for cn := t.Root; cn != nil; {
-		s.PushStack(stack.LinkNode{Elem: cn})
-		cn = cn.LChild
+	stack := list.New()
+	for currNode := root; currNode != nil; {
+		stack.PushFront(currNode)
+		currNode = currNode.Left
 	}
-	fmt.Printf("Tree in-order travel:\n\t")
-	for !s.IsEmpty() {
-		qn, err := s.PopStack()
-		if err != nil {
-			log.Fatal("stack is empty already")
-		}
+	for stack.Len() != 0 {
+		elem := stack.Front()
+		stack.Remove(elem)
+		node := elem.Value.(*tree.Node)
+		travelRest = append(travelRest, node.Val)
 
-		tn := qn.Elem.(*tree.Node)
-		fmt.Printf("%v -> ", tn.Elem)
-		if tn.RChild != nil {
-			for cn := tn.RChild; cn != nil; {
-				s.PushStack(stack.LinkNode{Elem: cn})
-				cn = cn.LChild
+		if node.Right != nil {
+			for currNode := node.Right; currNode != nil; {
+				stack.PushFront(currNode)
+				currNode = currNode.Left
 			}
 		}
 	}
-	fmt.Println()
+
+	return travelRest
 }

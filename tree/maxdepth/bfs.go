@@ -10,7 +10,7 @@ package maxdepth
 
 import (
 	"github.com/kakukosaku/DSA/queue/queue"
-	"github.com/kakukosaku/DSA/tree/tree"
+	"github.com/kakukosaku/DSA/tree"
 )
 
 // BFSMaxDepth queue base bfs
@@ -23,8 +23,8 @@ func BFSMaxDepth(t *tree.Node) int {
 	q := queue.New()
 	maxDepth := 0
 	if t != nil {
-		q.EnQueue(queue.LinkNode{Elem: E{t.LChild, maxDepth + 1}})
-		q.EnQueue(queue.LinkNode{Elem: E{t.RChild, maxDepth + 1}})
+		q.EnQueue(queue.LinkNode{Elem: E{t.Left, maxDepth + 1}})
+		q.EnQueue(queue.LinkNode{Elem: E{t.Right, maxDepth + 1}})
 	}
 
 	for !q.IsEmpty() {
@@ -39,8 +39,8 @@ func BFSMaxDepth(t *tree.Node) int {
 		}
 
 		if e.Node != nil {
-			q.EnQueue(queue.LinkNode{Elem: E{e.Node.LChild, e.Depth + 1}})
-			q.EnQueue(queue.LinkNode{Elem: E{e.Node.RChild, e.Depth + 1}})
+			q.EnQueue(queue.LinkNode{Elem: E{e.Node.Left, e.Depth + 1}})
+			q.EnQueue(queue.LinkNode{Elem: E{e.Node.Right, e.Depth + 1}})
 		}
 	}
 

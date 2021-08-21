@@ -9,43 +9,39 @@
 package travel
 
 import (
-	"fmt"
-	"github.com/kakukosaku/DSA/stack/stack"
-	"github.com/kakukosaku/DSA/tree/tree"
-	"log"
+	"container/list"
+	"github.com/kakukosaku/DSA/tree"
 )
 
-func PostOrder(t *tree.Tree) {
-	if t.Root == nil {
-		log.Fatal("tree is empty")
+func PostOrder(root *tree.Node) []int {
+	travelRest := make([]int, 0)
+	if root == nil {
+		return travelRest
 	}
 
-	s1 := stack.New()
-	s2 := stack.New()
-	s1.PushStack(stack.LinkNode{Elem: t.Root})
-	for !s1.IsEmpty() {
-		sn, err := s1.PopStack()
-		if err != nil {
-			log.Fatal("stack is empty already")
-		}
-		tn := sn.Elem.(*tree.Node)
+	stack1 := list.New()
+	stack2 := list.New()
+	stack1.PushFront(root)
+	for stack1.Len() != 0 {
+		elem := stack1.Front()
+		stack1.Remove(elem)
+		node := elem.Value.(*tree.Node)
+		stack2.PushFront(node)
 
-		s2.PushStack(stack.LinkNode{Elem: tn})
-		if tn.LChild != nil {
-			s1.PushStack(stack.LinkNode{Elem: tn.LChild})
+		if node.Left != nil {
+			stack1.PushFront(node.Left)
 		}
-		if tn.RChild != nil {
-			s1.PushStack(stack.LinkNode{Elem: tn.RChild})
+		if node.Right != nil {
+			stack1.PushFront(node.Right)
 		}
 	}
-	fmt.Printf("Tree post-order travel\n\t")
-	for !s2.IsEmpty() {
-		sn, err := s2.PopStack()
-		if err != nil {
-			log.Fatal("stack is empty already")
-		}
-		tn := sn.Elem.(*tree.Node)
-		fmt.Printf("%v -> ", tn.Elem)
+
+	for stack2.Len() != 0 {
+		elem := stack2.Front()
+		stack2.Remove(elem)
+		node := elem.Value.(*tree.Node)
+		travelRest = append(travelRest, node.Val)
 	}
-	fmt.Println()
+
+	return travelRest
 }
