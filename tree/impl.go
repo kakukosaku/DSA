@@ -42,9 +42,9 @@ func (n *Node) Show() {
 		currLevel++
 		for levelNum := queue.Len(); levelNum > 0; levelNum-- {
 			elem := queue.Front()
+			queue.Remove(elem)
 			node := elem.Value.(*Node)
 			_, _ = buf.WriteString(fmt.Sprintf("%d ", node.Val))
-			queue.Remove(elem)
 
 			if node.Left != nil {
 				queue.PushBack(node.Left)
